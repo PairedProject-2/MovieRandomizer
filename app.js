@@ -80,7 +80,7 @@ myApp.displayImages = function (array) {
         const imgGrid = document.querySelector(".grid");
         const inventoryEl = document.querySelector(".inventory");
 
-        imgEl.src = `https://image.tmdb.org/t/p/w500/${arrayItem.poster_path}`;
+        imgEl.src = `https://image.tmdb.org/t/p/w500${arrayItem.poster_path}`;
         listEl.append(imgEl);
         imgGrid.append(listEl);
     });
