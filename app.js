@@ -77,12 +77,12 @@ myApp.displayImages = function (array) {
     array.forEach((arrayItem) => {
         const listEl = document.createElement("li");
         const imgEl = document.createElement("img");
-        const imgGrid = document.querySelector(".grid");
-        const inventoryEl = document.querySelector(".inventory");
+        const imgGrid = document.querySelector(".inventory");
+        // const inventoryEl = document.querySelector(".inventory");
 
         imgEl.src = `https://image.tmdb.org/t/p/w500${arrayItem.poster_path}`;
         listEl.append(imgEl);
-        imgGrid.append(listEl);
+        imgGrid.appendChild(listEl);
     });
 };
 

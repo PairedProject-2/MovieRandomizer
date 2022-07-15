@@ -509,7 +509,8 @@ body {
 
 .theater-sign {
   height: 300px;
-  margin: 10px;
+  margin: 0 auto;
+  max-width: 750px;
 }
 
 .sign-top {
@@ -771,5 +772,33 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+.inventory {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 100px;
+  align-items: center;
+}
+.inventory li {
+  padding: 10px;
+  margin: 5px;
+}
+.inventory li img {
+  width: 90vw;
+  max-width: 300px;
+}
+
+@media (min-width: 900px) {
+  .inventory {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1625px;
+  }
+  .inventory li {
+    padding: 5px;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,12 @@
+@media (min-width: 900px) {
+    .inventory {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1625px;
+        li {
+            padding: 5px;
+        }
+    }
+}

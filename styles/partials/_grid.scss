@@ -1,0 +1,15 @@
+.inventory {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 100px;
+    align-items: center;
+    li {
+        padding: 10px;
+        margin: 5px;
+        img {
+            width: 90vw;
+            max-width: 300px;
+        }
+    }
+}
