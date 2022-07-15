@@ -1,0 +1,198 @@
+$red: red;
+$yellow: #ffc600;
+$blue: #07294d;
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    background: black;
+    display: flex;
+}
+
+.theater-sign {
+    height: 300px;
+    margin: 10px;
+}
+
+.sign-top {
+    display: flex;
+    align-items: center;
+}
+.sign-lines {
+    flex: 0 1 25vw;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.sign-line {
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #fff, 0 0 20px $blue, 0 0 35px $blue, 0 0 40px $blue;
+    height: 6px;
+    margin-top: 16px;
+}
+.sign-title {
+    color: #fff4cd;
+    flex: 0 1 20%;
+    font-family: "Fredoka One", cursive;
+    font-size: 25px;
+    letter-spacing: 10px;
+    margin: 6px auto;
+    padding-left: 12px;
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px $yellow, 0 0 35px $yellow,
+        0 0 40px $yellow;
+    text-transform: uppercase;
+
+    animation: flicker 3s linear infinite;
+    -moz-animation: flicker 3s linear infinite;
+    -webkit-animation: flicker 3s linear infinite;
+}
+.grid-container {
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff, 0 0 20px $red, 0 0 35px $red, 0 0 40px $red,
+        inset 0 0 10px #fff, inset 0 0 20px $red, inset 0 0 35px $red,
+        inset 0 0 40px $red;
+    color: #808080;
+    padding: 12px;
+    height: 75vw;
+    max-height: 200px;
+
+    animation: flicker 3s linear infinite;
+    -moz-animation: flicker 3s linear infinite;
+    -webkit-animation: flicker 3s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neon {
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+        0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    font-size: 2rem;
+}
+.grid {
+    max-height: 100px;
+}
+// .grid::after {
+//     box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.3) inset;
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     display: block;
+// }
+
+.show-details {
+    color: #303030;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 48px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+    4% {
+        opacity: 0.9;
+    }
+    6% {
+        opacity: 0.85;
+    }
+    8% {
+        opacity: 0.95;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    11% {
+        opacity: 0.922;
+    }
+    12% {
+        opacity: 0.9;
+    }
+    14% {
+        opacity: 0.95;
+    }
+    16% {
+        opacity: 0.98;
+    }
+    17% {
+        opacity: 0.9;
+    }
+    19% {
+        opacity: 0.93;
+    }
+    20% {
+        opacity: 0.99;
+    }
+    24% {
+        opacity: 1;
+    }
+    26% {
+        opacity: 0.94;
+    }
+    28% {
+        opacity: 0.98;
+    }
+    37% {
+        opacity: 0.93;
+    }
+    39% {
+        opacity: 0.96;
+    }
+    42% {
+        opacity: 1;
+    }
+    44% {
+        opacity: 0.97;
+    }
+    46% {
+        opacity: 0.94;
+    }
+    56% {
+        opacity: 0.9;
+    }
+    58% {
+        opacity: 0.9;
+    }
+    60% {
+        opacity: 0.99;
+    }
+    68% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.9;
+    }
+    72% {
+        opacity: 0.95;
+    }
+    93% {
+        opacity: 0.93;
+    }
+    95% {
+        opacity: 0.95;
+    }
+    97% {
+        opacity: 0.93;
+    }
+    to {
+        opacity: 1;
+    }
+}
