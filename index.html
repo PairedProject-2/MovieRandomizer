@@ -14,15 +14,27 @@
         <form action="">
             <label for="movieYear">Choose A Year</label>
             <select id="movieYear" name="movieYear">
-                <option value="2010s">2010s</option>
-                <option value="2000s">2000s</option>
-                <option value="1990s">1990s</option>
+                <option
+                    value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
+                >
+                    2010 - 2022
+                </option>
+                <option
+                    value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
+                >
+                    2000 - 2009
+                </option>
+                <option
+                    value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
+                >
+                    1990 - 1999
+                </option>
             </select>
 
             <label for="movieScore">Choose A IMDb Score</label>
             <select id="movieScore" name="movieScore">
-                <option value="goodMovie">Good Movie</option>
-                <option value="badMovie">Bad Movie</option>
+                <option value="desc">Good Movie</option>
+                <option value="asc">Bad Movie</option>
             </select>
             <input type="submit" value="Submit" class="submitButton" />
         </form>
