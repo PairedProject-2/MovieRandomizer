@@ -570,8 +570,8 @@ body {
   font-size: 2rem;
 }
 
-.grid {
-  max-height: 100px;
+.theatre-grid {
+  width: 100px;
 }
 
 .show-details {
