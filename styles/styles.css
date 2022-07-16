@@ -497,19 +497,19 @@ html {
   overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0 auto;
-}
-
 body {
   background: black;
   display: flex;
 }
 
+.main {
+  margin: 0 auto;
+}
+
 .theater-sign {
   height: 300px;
   margin: 0 auto;
+  width: 90vw;
   max-width: 750px;
 }
 
@@ -774,11 +774,83 @@ body {
     opacity: 1;
   }
 }
+select {
+  background-color: black;
+  color: #fff;
+  font-size: inherit;
+  padding: 0.5em;
+  padding-right: 2.5em;
+  border: 0;
+  border-bottom: 2px solid white;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+select option:hover {
+  color: #d2f0f0;
+}
+
+form {
+  margin: 35px 10px 35px 10px;
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 5px;
+}
+form select {
+  margin: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+form input {
+  width: 100px;
+  align-self: center;
+  margin: 20px;
+}
+form .submitButton {
+  background-color: transparent;
+  color: white;
+  font-family: "Monserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  transition: all 0.3s;
+}
+form .submitButton:hover {
+  cursor: pointer;
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.681) inset;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0, 0, 0, 0.4);
+}
+
 .inventory {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: 100px;
+  margin-top: 275px;
   align-items: center;
 }
 .inventory li {
@@ -788,6 +860,10 @@ body {
 .inventory li img {
   width: 90vw;
   max-width: 300px;
+  box-shadow: 5px 0px 12px rgb(255, 255, 255);
+}
+.inventory li img:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {

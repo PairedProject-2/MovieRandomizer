@@ -101,7 +101,6 @@ submitButton.addEventListener("click", function (event) {
     // const imgEl = document.createElement("img");
     // const imgGrid = document.querySelector(".grid");
     // const inventoryEl = document.querySelector(".inventory");
-
     // myApp.movieArrayTest = myApp.movieArray.splice(0, 5);
     console.log("button click is running");
     // listEl.innerHTML = `
