@@ -1,70 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Movie Randomizer</title>
-        <link rel="stylesheet" href="./styles/styles.css" />
-    </head>
-    <body>
-        <div class="main">
-        <div class="theater-sign">
-            <div class="sign-top">
-                <div class="sign-lines">
-                    <div class="sign-line"></div>
-                    <div class="sign-line"></div>
-                </div>
-                <div class="sign-title">Decision Fatigue?</div>
-                <div class="sign-lines">
-                    <div class="sign-line"></div>
-                    <div class="sign-line"></div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Randomizer</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="theater-sign">
+        <div class="sign-top">
+          <div class="sign-lines">
+            <div class="sign-line"></div>
+            <div class="sign-line"></div>
+          </div>
+          <div class="sign-title">Decision Fatigue?</div>
+          <div class="sign-lines">
+            <div class="sign-line"></div>
+            <div class="sign-line"></div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="theatre-grid">
+            <div class="show-details" style="color: #f8f0e3">
+              <p class="neon">Scroll no more!</p>
             </div>
-            <div class="grid-container">
-                <div class="theatre-grid">
-                <div class="show-details" style="color: #f8f0e3">
-                    <p class="neon" >Scroll no more!</p>
-                </div>
-            </div>
+          </div>
         </div>
 
         <form action="">
-            <label for="movieYear">Choose A Year</label>
-            <select id="movieYear" name="movieYear">
-                <option
-                    value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
-                >
-                    2010 - 2022
-                </option>
-                <option
-                    value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
-                >
-                    2000 - 2009
-                </option>
-                <option
-                    value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
-                >
-                    1990 - 1999
-                </option>
-            </select>
+          <label for="movieYear">Choose A Year</label>
+          <select id="movieYear" class="selectVal">
+            <option
+              value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
+            >
+              2010 - 2022
+            </option>
+            <option
+              value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
+            >
+              2000 - 2009
+            </option>
+            <option
+              value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
+            >
+              1990 - 1999
+            </option>
+          </select>
 
-            <label for="movieScore">Choose A IMDb Score</label>
-            <select id="movieScore" name="movieScore">
-                <option value="desc">Good Movie</option>
-                <option value="asc">Bad Movie</option>
-            </select>
-            <input type="submit" value="Submit" class="submitButton" />
+          <label for="movieScore">Choose A IMDb Score</label>
+          <select id="movieScore" class="selectVal">
+            <option value="desc" selected="selected">Good Movie</option>
+            <option value="asc">Bad Movie</option>
+          </select>
+          <button onClick="getSelectedItems()" class="submitButton">
+            Submit
+          </button>
         </form>
+      </div>
     </div>
 
-        <div class="wrapper">
-            <div class="grid">
-                <ul class="inventory"></ul>
-            </div>
-        </div>
-        <script src="app.js"></script>
+    <div class="wrapper">
+      <div class="grid">
+        <ul class="inventory"></ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
 
-        <footer>Created at Juno College</footer>
-    </body>
+    <footer>Created at Juno College</footer>
+  </body>
 </html>
+
+<!-- <select id="movieYear" class="selectVal">
+  <option value="1">test1</option>
+  <option value="2" selected="selected">test2</option>
+  <option value="3">test3</option>
+</select>
+
+          <select id="movieScore" name="selectVal">
+  <option value="1">asdf</option>
+  <option value="2" selected="selected">fdsa</option>
+  <option value="3">asdf</option>
+</select>
+
+<select id="movieYear" class="selectVal">
+            <option
+              value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
+            >
+              2010 - 2022
+            </option>
+            <option
+              value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
+            >
+              2000 - 2009
+            </option>
+            <option
+              value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
+            >
+              1990 - 1999
+            </option>
+          </select>
+
+          <label for="movieScore">Choose A IMDb Score</label>
+          <select id="movieScore" name="selectVal">
+            <option value="desc" selected="selected">Good Movie</option>
+            <option value="asc">Bad Movie</option>
+          </select> -->
