@@ -109,24 +109,6 @@ submitButton.addEventListener("click", function (event) {
   const yearChoice = document.querySelector("#movieYear");
   const scoreChoice = document.querySelector("#movieScore");
 
-<<<<<<< HEAD
-    myApp.getNewArray(yearChoice.value, scoreChoice.value);
-    // const listEl = document.createElement("li");
-    // const imgEl = document.createElement("img");
-    // const imgGrid = document.querySelector(".grid");
-    // const inventoryEl = document.querySelector(".inventory");
-    // myApp.movieArrayTest = myApp.movieArray.splice(0, 5);
-    console.log("button click is running");
-    // listEl.innerHTML = `
-    // <div.card>
-    // <div.moviePoster>
-    // <img src="">
-    // <p>vote_average</p>
-    // //<button>Icon of a heart</button>
-    // </div>
-    // </div>
-    // `;
-=======
   myApp.getNewArray(yearChoice.value, scoreChoice.value);
 
   myApp.movieArrayTest = myApp.movieArray.splice(0, 5);
@@ -140,7 +122,6 @@ submitButton.addEventListener("click", function (event) {
   //   // </div>
   //   // </div>
   //   // `;
->>>>>>> my-feature-branch
 
   //PSEUDOCODE
   //grab the value from user selections
