@@ -2,7 +2,7 @@ const myApp = { movieArray: [] };
 
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
 myApp.url =
-  " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=3000&with_watch_monetization_types=flatrate";
+  " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1500&with_watch_monetization_types=flatrate";
 myApp.init = () => {};
 
 //  Create a loop to loop through the pages based on userclick and push the object into a new array
@@ -11,7 +11,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Fetch on movieRating
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=1&include_video=false&${year}&vote_count.gte=3000&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=1&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
   )
     .then((results) => {
       return results.json();
@@ -24,7 +24,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Fetch on movieYear
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=2&include_video=false&${year}&vote_count.gte=3000&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=2&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
   )
     .then((results) => {
       return results.json();
@@ -37,7 +37,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Last fetch call
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=3&include_video=false&${year}&vote_count.gte=3000&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=3&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
   )
     .then((results) => {
       return results.json();
@@ -46,17 +46,28 @@ myApp.getNewArray = (year, movieRating) => {
       jsonData.results.forEach((arrayItem) => {
         myApp.movieArray.push(arrayItem);
       });
-      myApp.movieArray = myApp.movieRandomizer(myApp.movieArray).splice(0, 5);
+      // myApp.movieArray = myApp.movieRandomizer(myApp.movieArray).splice(0, 5);
+      console.log(myApp.movieArray);
 
       // console.log(myApp.movieArrayDecisive);
-      // myApp.movieArrayIndecisive = myApp
-      //     .movieRandomizer(myApp.movieArray)
-      //     .splice(0, 5);
-      // myApp.movieArrayHopeless = myApp
-      //     .movieRandomizer(myApp.movieArray)
-      //     .splice(0, 1);
-      // myApp.movieArrayDecisive = myApp.movieArray.splice(0, 5);
-      myApp.displayImages(myApp.movieArray);
+      myApp.movieArrayIndecisive = myApp
+        .movieRandomizer(myApp.movieArray)
+        .splice(0, 5);
+      myApp.movieArrayHopeless = myApp
+        .movieRandomizer(myApp.movieArray)
+        .splice(0, 1);
+      myApp.movieArrayDecisive = myApp.movieArray.splice(0, 10);
+      document.querySelector(".inventory").innerHTML = "";
+      console.log(myApp.movieArrayIndecisive);
+      if (myApp.results.includes("Decisive")) {
+        myApp.displayImages(myApp.movieArrayDecisive);
+      } else if (myApp.results.includes("Indecisive")) {
+        myApp.displayImages(myApp.movieArrayIndecisive);
+      } else {
+        myApp.displayImages(myApp.movieArrayHopeless);
+      }
+
+      console.log(myApp.results);
     });
   console.log(myApp.movieArray);
 };
@@ -65,14 +76,15 @@ myApp.getNewArray = (year, movieRating) => {
 function getSelectedItems() {
   const items = document.getElementsByClassName("selectVal");
 
-  const results = [];
+  myApp.results = [];
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     const userInput = item.options[item.selectedIndex].text;
-    results.push(userInput);
+    myApp.results.push(userInput);
+    console.log(userInput);
   }
-  console.log(results);
+  // console.log(myApp.results);
 }
 
 // When the user clicks the submit button
@@ -111,7 +123,6 @@ submitButton.addEventListener("click", function (event) {
 
   myApp.getNewArray(yearChoice.value, scoreChoice.value);
 
-  myApp.movieArrayTest = myApp.movieArray.splice(0, 5);
   // console.log("button click is running");
   //   // listEl.innerHTML = `
   //   // <div.card>
