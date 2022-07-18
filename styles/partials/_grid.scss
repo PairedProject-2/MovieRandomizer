@@ -1,19 +1,32 @@
 .inventory {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin-top: 275px;
-    align-items: center;
-    li {
-        padding: 10px;
-        margin: 5px;
-        img {
-            width: 90vw;
-            max-width: 300px;
-            box-shadow: 5px 0px 12px rgb(255, 255, 255);
-            &:hover {
-                cursor: pointer;
-            }
-        }
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 275px;
+  align-items: center;
+  li {
+    padding: 10px;
+    margin: 5px;
+    img {
+      width: 90vw;
+      max-width: 300px;
+      box-shadow: 5px 0px 12px rgb(255, 255, 255);
+      &:hover {
+        cursor: pointer;
+        transform: rotateY(180deg);
+      }
     }
+  }
 }
+
+// .inventory:hover .grid {
+//   transform: rotateY(180deg);
+//   .front {
+//     z-index: 2;
+//     border: 2px solid red;
+//   }
+//   .back {
+//     z-index: 1;
+//     border: 2px solid green;
+//   }
+// }

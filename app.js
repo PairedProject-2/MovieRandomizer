@@ -2,7 +2,7 @@ const myApp = { movieArray: [] };
 
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
 myApp.url =
-  " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1500&with_watch_monetization_types=flatrate";
+  " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers";
 myApp.init = () => {};
 
 //  Create a loop to loop through the pages based on userclick and push the object into a new array
@@ -11,7 +11,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Fetch on movieRating
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=1&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=1&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
   )
     .then((results) => {
       return results.json();
@@ -24,7 +24,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Fetch on movieYear
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=2&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=2&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
   )
     .then((results) => {
       return results.json();
@@ -37,7 +37,7 @@ myApp.getNewArray = (year, movieRating) => {
 
   // Last fetch call
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=3&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate`
+    `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=3&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
   )
     .then((results) => {
       return results.json();
@@ -46,10 +46,8 @@ myApp.getNewArray = (year, movieRating) => {
       jsonData.results.forEach((arrayItem) => {
         myApp.movieArray.push(arrayItem);
       });
-      // myApp.movieArray = myApp.movieRandomizer(myApp.movieArray).splice(0, 5);
       console.log(myApp.movieArray);
 
-      // console.log(myApp.movieArrayDecisive);
       myApp.movieArrayIndecisive = myApp
         .movieRandomizer(myApp.movieArray)
         .splice(0, 5);
@@ -58,7 +56,7 @@ myApp.getNewArray = (year, movieRating) => {
         .splice(0, 1);
       myApp.movieArrayDecisive = myApp.movieArray.splice(0, 10);
       document.querySelector(".inventory").innerHTML = "";
-      console.log(myApp.movieArrayIndecisive);
+
       if (myApp.results.includes("Decisive")) {
         myApp.displayImages(myApp.movieArrayDecisive);
       } else if (myApp.results.includes("Indecisive")) {
@@ -84,7 +82,6 @@ function getSelectedItems() {
     myApp.results.push(userInput);
     console.log(userInput);
   }
-  // console.log(myApp.results);
 }
 
 // When the user clicks the submit button
@@ -97,16 +94,50 @@ myApp.movieRandomizer = (array) => {
   return array.sort(() => 0.5 - Math.random());
 };
 
+myApp.getProviders = function (providers, listEl) {
+  //   //create a div, give it a class name
+  const providerContainer = document.createElement("div");
+  const providerLink = document.createElement("a");
+  const errorMessage = document.createElement("p");
+  if (providers) {
+    providerLink.innerText = `JustWatch`;
+    providerLink.setAttribute("href", providers.link);
+
+    providerContainer.className = "providerContainer";
+    providerLink.className = "providerLink";
+    providerContainer.append(providerLink);
+    listEl.appendChild(providerContainer);
+  } else {
+    listEl.append(errorMessage);
+    errorMessage.innerText = `Not Available in Canada`;
+  }
+};
+
 // Create a function to display the images from the array
 myApp.displayImages = function (array) {
   array.forEach((arrayItem) => {
     const listEl = document.createElement("li");
     const imgEl = document.createElement("img");
     const imgGrid = document.querySelector(".inventory");
-    // const inventoryEl = document.querySelector(".inventory");
+    fetch(
+      `https://api.themoviedb.org/3/movie/${arrayItem.id}/watch/providers?api_key=ca2c13c7d22715aaa9867db7666b846d`
+    )
+      .then((results) => {
+        return results.json();
+      })
+      .then((jsonData) => {
+        myApp.getProviders(jsonData.results.CA, listEl);
+      });
 
-    imgEl.src = `https://image.tmdb.org/t/p/w500${arrayItem.poster_path}`;
-    listEl.append(imgEl);
+    listEl.innerHTML = `
+    <div class="card">
+    <div class="moviePoster">
+    <img src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"/>
+    </div>
+    <button class="likeButton">heart</button>
+    </div>
+    `;
+
     imgGrid.appendChild(listEl);
   });
 };
@@ -123,25 +154,14 @@ submitButton.addEventListener("click", function (event) {
 
   myApp.getNewArray(yearChoice.value, scoreChoice.value);
 
-  // console.log("button click is running");
-  //   // listEl.innerHTML = `
-  //   // <div.card>
-  //   // <div.moviePoster>
-  //   // <img src="">
-  //   // <p>vote_average</p>
-  //   // //<button>Icon of a heart</button>
-  //   // </div>
-  //   // </div>
-  //   // `;
-
-  //PSEUDOCODE
-  //grab the value from user selections
-  // display the images using the api
-  // get the correct amount of images from the array
-  // call 3 pages worth from the api
-  // create a new array and store the value inside
-  // Get the user input from the dropdown menu and store the selection in an array
-  // using an array randomize and display the images
+  //Stretch goals
+  // Like button and favourite's list using localStorage
+  // Fix CSS
+  // Cleanup code
+  // Store if and array statements into a function
+  // Use a drawer to save our favourite's list
+  // Card flip animation
+  //
 });
 
 myApp.init();

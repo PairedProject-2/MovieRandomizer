@@ -864,6 +864,7 @@ form .submitButton:hover {
 }
 .inventory li img:hover {
   cursor: pointer;
+  transform: rotateY(180deg);
 }
 
 @media (min-width: 900px) {
