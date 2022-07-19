@@ -865,6 +865,7 @@ form .submitButton:hover {
 .inventory li img {
   width: 90vw;
   max-width: 300px;
+  height: 450px;
   box-shadow: 5px 0px 12px rgb(255, 255, 255);
 }
 .inventory li img:hover {
