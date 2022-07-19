@@ -54,7 +54,9 @@ myApp.getNewArray = (year, movieRating) => {
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 1);
 
-            myApp.movieArrayDecisive = myApp.movieArray.splice(0, 10);
+            myApp.movieArrayDecisive = myApp
+                .movieRandomizer(myApp.movieArray)
+                .splice(0, 10);
 
             document.querySelector(".inventory").innerHTML = ""; //clear grid
 
