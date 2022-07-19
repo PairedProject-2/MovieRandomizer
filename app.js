@@ -108,7 +108,7 @@ myApp.getProviders = function (providers, listEl) {
         listEl.appendChild(providerContainer);
     } else {
         listEl.append(errorMessage);
-        errorMessage.innerText = `Not Available in Canada`;
+        errorMessage.innerText = `Not available for streaming in Canada`;
     }
 };
 
