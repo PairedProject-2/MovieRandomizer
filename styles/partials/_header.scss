@@ -187,24 +187,6 @@ body {
     }
 }
 
-select {
-    background-color: black;
-    color: #fff;
-    font-size: inherit;
-    padding: 0.5em;
-    padding-right: 2.5em;
-    border: 0;
-    border-bottom: 2px solid white;
-    margin: 0;
-    border-radius: 3px;
-    text-indent: 0.01px;
-    text-overflow: "";
-    -webkit-appearance: button; /* hide default arrow in chrome OSX */
-    option:hover {
-        color: #d2f0f0;
-    }
-}
-
 form {
     margin: 0 auto;
     display: flex;
@@ -213,7 +195,7 @@ form {
     padding: 5px;
     max-width: 1000px;
     * {
-        margin: 50px;
+        margin: 15px;
     }
     label {
         color: white;
@@ -221,11 +203,30 @@ form {
         font-weight: 600;
         margin: 5px;
     }
+    .formSelects {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
     select {
         margin: 5px;
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 600;
         border-radius: 10px;
+        cursor: pointer;
+        background-color: black;
+        color: #fff;
+        padding: 0.5em;
+        border: 0;
+        border-bottom: 2px solid white;
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        text-overflow: "";
+        -webkit-appearance: button; /* hide default arrow in chrome OSX */
+        option:hover {
+            color: #d2f0f0;
+        }
     }
     input {
         width: 100px;
@@ -235,16 +236,18 @@ form {
     .submitButton {
         background-color: transparent;
         color: white;
-        font-family: "Monserrat", sans-serif;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        letter-spacing: 2px;
         padding: 20px;
         font-weight: 600;
         text-align: center;
         align-self: center;
         transition: all 0.3s;
         border-radius: 10px;
+        text-transform: uppercase;
         &:hover {
             cursor: pointer;
-            box-shadow: 0 0px 20px rgba(255, 255, 255, 0.681) inset;
+            box-shadow: 0 0px 20px #d34b4b inset;
             border: 1px solid rgba(255, 255, 255, 1);
             color: rgba(255, 255, 255, 1);
         }

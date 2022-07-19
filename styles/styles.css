@@ -774,24 +774,6 @@ body {
     opacity: 1;
   }
 }
-select {
-  background-color: black;
-  color: #fff;
-  font-size: inherit;
-  padding: 0.5em;
-  padding-right: 2.5em;
-  border: 0;
-  border-bottom: 2px solid white;
-  margin: 0;
-  border-radius: 3px;
-  text-indent: 0.01px;
-  text-overflow: "";
-  -webkit-appearance: button; /* hide default arrow in chrome OSX */
-}
-select option:hover {
-  color: #d2f0f0;
-}
-
 form {
   margin: 0 auto;
   display: flex;
@@ -801,7 +783,7 @@ form {
   max-width: 1000px;
 }
 form * {
-  margin: 50px;
+  margin: 15px;
 }
 form label {
   color: white;
@@ -809,11 +791,30 @@ form label {
   font-weight: 600;
   margin: 5px;
 }
+form .formSelects {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 form select {
   margin: 5px;
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   border-radius: 10px;
+  cursor: pointer;
+  background-color: black;
+  color: #fff;
+  padding: 0.5em;
+  border: 0;
+  border-bottom: 2px solid white;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+form select option:hover {
+  color: #d2f0f0;
 }
 form input {
   width: 100px;
@@ -823,17 +824,19 @@ form input {
 form .submitButton {
   background-color: transparent;
   color: white;
-  font-family: "Monserrat", sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: 2px;
   padding: 20px;
   font-weight: 600;
   text-align: center;
   align-self: center;
   transition: all 0.3s;
   border-radius: 10px;
+  text-transform: uppercase;
 }
 form .submitButton:hover {
   cursor: pointer;
-  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.681) inset;
+  box-shadow: 0 0px 20px #d34b4b inset;
   border: 1px solid rgb(255, 255, 255);
   color: rgb(255, 255, 255);
 }
@@ -888,15 +891,16 @@ form .submitButton:hover {
   font-size: 1.5rem;
   border: 0;
   border-radius: 5px;
-  color: rgb(169, 6, 6);
+  color: black;
+  background-color: #f8f0e3;
   transition: all 0.1s;
 }
 .inventory li .card .likeButton:hover {
   cursor: pointer;
-  background-color: gray;
+  color: #cf5858;
 }
 .inventory .errorMessage {
-  margin: 0;
+  padding-top: 24px 0 0 0;
   font-family: "M PLUS Rounded 1c", sans-serif;
   color: rgb(220, 17, 17);
   padding: 2px;
@@ -909,20 +913,22 @@ form .submitButton:hover {
 }
 .inventory .providerContainer {
   text-align: center;
-  margin: 10px 0 15px 0;
+  margin: 20px 0 25px 0;
 }
 .inventory .providerContainer a {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   text-decoration: none;
-  color: #e2d6a9;
+  color: rgb(255, 255, 255);
   background-color: transparent;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 0 0 5px #fff, 0 0 2px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
   border: 1px solid white;
   border-radius: 10px;
-  padding: 8px;
+  padding: 20px;
+}
+.inventory .providerContainer a:hover {
+  box-shadow: 0 0px 20px #d34b4b inset;
 }
 
 @media (min-width: 750px) {
@@ -935,5 +941,14 @@ form .submitButton:hover {
   }
   .inventory li {
     padding: 5px;
+  }
+}
+@media (min-width: 1200px) {
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1600px;
+    margin: 50px auto 60px auto;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -29,17 +29,18 @@
                 font-size: 1.5rem;
                 border: 0;
                 border-radius: 5px;
-                color: rgb(169, 6, 6);
+                color: black;
+                background-color: #f8f0e3;
                 transition: all 0.1s;
                 &:hover {
                     cursor: pointer;
-                    background-color: gray;
+                    color: #cf5858;
                 }
             }
         }
     }
     .errorMessage {
-        margin: 0;
+        padding-top: 24px 0 0 0;
         font-family: "M PLUS Rounded 1c", sans-serif;
         color: rgb(220, 17, 17);
         padding: 2px;
@@ -52,21 +53,21 @@
     }
     .providerContainer {
         text-align: center;
-        margin: 10px 0 15px 0;
+        margin: 20px 0 25px 0;
         a {
             font-family: "M PLUS Rounded 1c", sans-serif;
             font-weight: 600;
             text-decoration: none;
-            color: #e2d6a9;
+            color: rgb(255, 255, 255);
             background-color: transparent;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 5px #fff, 0 0 2px #fff, 0 0 20px #fff,
-                0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff,
-                0 0 150px #0ff;
             border: 1px solid white;
             border-radius: 10px;
-            padding: 8px;
+            padding: 20px;
+            &:hover {
+                box-shadow: 0 0px 20px #d34b4b inset;
+            }
         }
     }
 }
