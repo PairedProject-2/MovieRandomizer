@@ -810,6 +810,7 @@ form select {
   margin: 5px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  border-radius: 10px;
 }
 form input {
   width: 100px;
@@ -820,12 +821,12 @@ form .submitButton {
   background-color: transparent;
   color: white;
   font-family: "Monserrat", sans-serif;
+  padding: 20px;
   font-weight: 600;
   text-align: center;
   align-self: center;
-  width: 150px;
-  height: 50px;
   transition: all 0.3s;
+  border-radius: 10px;
 }
 form .submitButton:hover {
   cursor: pointer;

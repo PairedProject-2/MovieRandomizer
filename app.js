@@ -78,7 +78,7 @@ function getSelectedItems() {
 
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-        const userInput = item.options[item.selectedIndex].value;
+        const userInput = item.options[item.selectedIndex].value; //We need the value, not the text
         myApp.results.push(userInput);
         console.log(userInput);
     }

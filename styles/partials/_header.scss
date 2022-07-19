@@ -223,6 +223,7 @@ form {
         margin: 5px;
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
+        border-radius: 10px;
     }
     input {
         width: 100px;
@@ -233,12 +234,12 @@ form {
         background-color: transparent;
         color: white;
         font-family: "Monserrat", sans-serif;
+        padding: 20px;
         font-weight: 600;
         text-align: center;
         align-self: center;
-        width: 150px;
-        height: 50px;
         transition: all 0.3s;
+        border-radius: 10px;
         &:hover {
             cursor: pointer;
             box-shadow: 0 0px 20px rgba(255, 255, 255, 0.681) inset;
