@@ -871,6 +871,31 @@ form .submitButton:hover {
   cursor: pointer;
   transform: rotateY(180deg);
 }
+.inventory li .card {
+  position: relative;
+}
+.inventory li .card img {
+  margin-bottom: 20px;
+}
+.inventory li .card .likeButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 5px;
+  color: rgb(169, 6, 6);
+  transition: all 0.1s;
+}
+.inventory li .card .likeButton:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+.inventory .errorMessage {
+  margin: 0;
+  color: white;
+  padding: 0px;
+}
 
 @media (min-width: 900px) {
   .inventory {

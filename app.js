@@ -99,6 +99,8 @@ myApp.getProviders = function (providers, listEl) {
     const providerContainer = document.createElement("div");
     const providerLink = document.createElement("a");
     const errorMessage = document.createElement("p");
+
+    errorMessage.className = "errorMessage";
     if (providers) {
         providerLink.innerText = `JustWatch`;
         providerLink.setAttribute("href", providers.link);
@@ -134,7 +136,7 @@ myApp.displayImages = function (array) {
     <div class="moviePoster">
     <img src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"/>
     </div>
-    <button class="likeButton">heart</button>
+    <button class="likeButton"><i class="fa-solid fa-heart-circle-plus"></i></button>
     </div>
     `;
 

@@ -16,6 +16,31 @@
                 transform: rotateY(180deg);
             }
         }
+        .card {
+            position: relative;
+            img {
+                margin-bottom: 20px;
+            }
+            .likeButton {
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                font-size: 1.5rem;
+                border: 0;
+                border-radius: 5px;
+                color: rgb(169, 6, 6);
+                transition: all 0.1s;
+                &:hover {
+                    cursor: pointer;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+    .errorMessage {
+        margin: 0;
+        color: white;
+        padding: 0px;
     }
 }
 
