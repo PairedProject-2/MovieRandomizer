@@ -98,7 +98,7 @@ myApp.getProviders = function (providers, listEl) {
     if (providers) {
         providerLink.innerText = `Where to Watch`;
         providerLink.setAttribute("href", providers.link);
-
+        providerLink.setAttribute("target", "_blank");
         providerContainer.className = "providerContainer";
         providerLink.className = "providerLink";
         providerContainer.append(providerLink);
