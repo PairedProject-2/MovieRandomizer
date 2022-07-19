@@ -1,9 +1,10 @@
-const myApp = { movieArray: [] };
+const myApp = {};
 
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
 myApp.url =
     " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers";
 myApp.init = () => {};
+const submitButton = document.querySelector(".submitButton");
 
 //  Create a loop to loop through the pages based on userclick and push the object into a new array
 myApp.getNewArray = (year, movieRating) => {
@@ -46,8 +47,6 @@ myApp.getNewArray = (year, movieRating) => {
             jsonData.results.forEach((arrayItem) => {
                 myApp.movieArray.push(arrayItem);
             });
-            console.log(myApp.movieArray);
-
             myApp.movieArrayIndecisive = myApp
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 5);
@@ -64,10 +63,8 @@ myApp.getNewArray = (year, movieRating) => {
             } else {
                 myApp.displayImages(myApp.movieArrayHopeless);
             }
-
-            console.log(myApp.results);
+            location.href = "#grid";
         });
-    console.log(myApp.movieArray);
 };
 
 // Store the user input from dropdown menu into a new array
@@ -83,9 +80,6 @@ function getSelectedItems() {
         console.log(userInput);
     }
 }
-
-// When the user clicks the submit button
-const submitButton = document.querySelector(".submitButton");
 
 // array randomizer
 myApp.movieRandomizer = (array) => {
@@ -146,9 +140,8 @@ myApp.displayImages = function (array) {
 
 // Execute this code based on user click
 submitButton.addEventListener("click", function (event) {
-    console.log("button click is running");
-
     event.preventDefault();
+
     myApp.movieArray = [];
 
     const yearChoice = document.querySelector("#movieYear");
