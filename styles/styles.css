@@ -795,7 +795,7 @@ form label {
 form .formSelects {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 form select {
   margin: 5px;
@@ -947,12 +947,15 @@ form .submitButton:hover {
     max-width: 1600px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
   form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     max-width: 1600px;
     margin: 50px auto 60px auto;
+  }
+  form .formSelects {
+    flex-basis: 403px;
   }
 }/*# sourceMappingURL=styles.css.map */
