@@ -1,81 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Randomizer</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="theater-sign">
-        <div class="sign-top">
-          <div class="sign-lines">
-            <div class="sign-line"></div>
-            <div class="sign-line"></div>
-          </div>
-          <div class="sign-title">Decision Fatigue?</div>
-          <div class="sign-lines">
-            <div class="sign-line"></div>
-            <div class="sign-line"></div>
-          </div>
-        </div>
-        <div class="grid-container">
-          <div class="theatre-grid">
-            <div class="show-details" style="color: #f8f0e3">
-              <p class="neon">Scroll no more!</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Randomizer</title>
+        <link rel="stylesheet" href="./styles/styles.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div class="theater-sign">
+                <div class="sign-top">
+                    <div class="sign-lines">
+                        <div class="sign-line"></div>
+                        <div class="sign-line"></div>
+                    </div>
+                    <div class="sign-title">Decision Fatigue?</div>
+                    <div class="sign-lines">
+                        <div class="sign-line"></div>
+                        <div class="sign-line"></div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="theatre-grid">
+                        <div class="show-details" style="color: #f8f0e3">
+                            <p class="neon">Scroll no more!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <form action="">
+                <label for="movieYear">Movie Release Date</label>
+                <select id="movieYear" class="selectVal">
+                    <option
+                        value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
+                    >
+                        2010 - 2022
+                    </option>
+                    <option
+                        value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
+                    >
+                        2000 - 2009
+                    </option>
+                    <option
+                        value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
+                    >
+                        1990 - 1999
+                    </option>
+                </select>
+
+                <label for="movieScore">Classics or Trash?</label>
+                <select id="movieScore" class="selectVal">
+                    <option value="desc" selected="selected">
+                        Give me a classic
+                    </option>
+                    <option value="asc">In the Mood for Trash</option>
+                </select>
+
+                <label for="movieDecisiveness"
+                    >How long have you been scrolling?</label
+                >
+                <select id="movieDecisiveness" class="selectVal">
+                    <option value="Decisive" selected="selected">
+                        Just started
+                    </option>
+                    <option value="Indecisive">My mind is numb</option>
+                    <option value="Hopeless">Help me!</option>
+                </select>
+
+                <button onClick="getSelectedItems()" class="submitButton">
+                    Recommendations
+                </button>
+            </form>
+
+            <div class="wrapper">
+                <div class="grid">
+                    <ul class="inventory"></ul>
+                </div>
+            </div>
+
+            <footer>Created at Juno College</footer>
         </div>
-
-        <form action="">
-          <label for="movieYear">Choose A Year</label>
-          <select id="movieYear" class="selectVal">
-            <option
-              value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
-            >
-              2010 - 2022
-            </option>
-            <option
-              value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
-            >
-              2000 - 2009
-            </option>
-            <option
-              value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
-            >
-              1990 - 1999
-            </option>
-          </select>
-
-          <label for="movieScore">Choose A IMDb Score</label>
-          <select id="movieScore" class="selectVal">
-            <option value="desc" selected="selected">Good Movie</option>
-            <option value="asc">Bad Movie</option>
-          </select>
-
-          <label for="movieDecisiveness">Choose an option</label>
-          <select id="movieDecisiveness" class="selectVal">
-            <option value="Decisive" selected="selected">Decisive</option>
-            <option value="Indecisive">Indecisive</option>
-            <option value="Hopeless">Hopeless</option>
-          </select>
-
-          <button onClick="getSelectedItems()" class="submitButton">
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <div class="wrapper">
-      <div class="grid">
-        <ul class="inventory"></ul>
-      </div>
-    </div>
-    <script src="app.js"></script>
-
-    <footer>Created at Juno College</footer>
-  </body>
+        <script src="app.js"></script>
+    </body>
 </html>

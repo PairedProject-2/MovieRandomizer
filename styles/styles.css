@@ -499,7 +499,6 @@ html {
 
 body {
   background: black;
-  display: flex;
 }
 
 .main {
@@ -793,9 +792,13 @@ select option:hover {
 }
 
 form {
-  margin: 35px 10px 35px 10px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
+}
+form * {
+  margin: 50px;
 }
 form label {
   color: white;
@@ -819,6 +822,7 @@ form .submitButton {
   font-family: "Monserrat", sans-serif;
   font-weight: 600;
   text-align: center;
+  align-self: center;
   width: 150px;
   height: 50px;
   transition: all 0.3s;
@@ -850,7 +854,7 @@ form .submitButton:hover {
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: 275px;
+  margin: 0 auto;
   align-items: center;
 }
 .inventory li {

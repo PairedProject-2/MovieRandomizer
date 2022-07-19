@@ -1,22 +1,22 @@
 .inventory {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin-top: 275px;
-  align-items: center;
-  li {
-    padding: 10px;
-    margin: 5px;
-    img {
-      width: 90vw;
-      max-width: 300px;
-      box-shadow: 5px 0px 12px rgb(255, 255, 255);
-      &:hover {
-        cursor: pointer;
-        transform: rotateY(180deg);
-      }
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    li {
+        padding: 10px;
+        margin: 5px;
+        img {
+            width: 90vw;
+            max-width: 300px;
+            box-shadow: 5px 0px 12px rgb(255, 255, 255);
+            &:hover {
+                cursor: pointer;
+                transform: rotateY(180deg);
+            }
+        }
     }
-  }
 }
 
 // .inventory:hover .grid {

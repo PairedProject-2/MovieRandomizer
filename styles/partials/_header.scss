@@ -5,7 +5,6 @@ $blue: #07294d;
 
 body {
     background: black;
-    display: flex;
 }
 .main {
     margin: 0 auto;
@@ -207,9 +206,13 @@ select {
 }
 
 form {
-    margin: 35px 10px 35px 10px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    max-width: 1000px;
+    * {
+        margin: 50px;
+    }
     label {
         color: white;
         font-family: "Montserrat", sans-serif;
@@ -232,6 +235,7 @@ form {
         font-family: "Monserrat", sans-serif;
         font-weight: 600;
         text-align: center;
+        align-self: center;
         width: 150px;
         height: 50px;
         transition: all 0.3s;
