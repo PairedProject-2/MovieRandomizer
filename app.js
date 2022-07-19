@@ -6,11 +6,9 @@ myApp.url =
 myApp.init = () => {};
 const submitButton = document.querySelector(".submitButton");
 
-//  Create a loop to loop through the pages based on userclick and push the object into a new array
+//  3 fetches to obtain 60 movie objects for array
 myApp.getNewArray = (year, movieRating) => {
-    console.log("fetch is running");
-
-    // Fetch on movieRating
+    // 1st fetch
     fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=1&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
     )
@@ -23,7 +21,7 @@ myApp.getNewArray = (year, movieRating) => {
             });
         });
 
-    // Fetch on movieYear
+    // 2nd fetch
     fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=2&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
     )
@@ -36,7 +34,7 @@ myApp.getNewArray = (year, movieRating) => {
             });
         });
 
-    // Last fetch call
+    // 3rd fetch
     fetch(
         `https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.${movieRating}&include_adult=false&page=3&include_video=false&${year}&vote_count.gte=1500&with_watch_monetization_types=flatrate&providers`
     )
@@ -47,15 +45,20 @@ myApp.getNewArray = (year, movieRating) => {
             jsonData.results.forEach((arrayItem) => {
                 myApp.movieArray.push(arrayItem);
             });
+
             myApp.movieArrayIndecisive = myApp
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 5);
+
             myApp.movieArrayHopeless = myApp
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 1);
-            myApp.movieArrayDecisive = myApp.movieArray.splice(0, 10);
-            document.querySelector(".inventory").innerHTML = "";
 
+            myApp.movieArrayDecisive = myApp.movieArray.splice(0, 10);
+
+            document.querySelector(".inventory").innerHTML = ""; //clear grid
+
+            //display 10, 5, or 1 movie depending on user selection
             if (myApp.results.includes("Decisive")) {
                 myApp.displayImages(myApp.movieArrayDecisive);
             } else if (myApp.results.includes("Indecisive")) {
@@ -75,26 +78,24 @@ function getSelectedItems() {
 
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-        const userInput = item.options[item.selectedIndex].value; //We need the value, not the text
+        const userInput = item.options[item.selectedIndex].value;
         myApp.results.push(userInput);
-        console.log(userInput);
     }
 }
 
 // array randomizer
 myApp.movieRandomizer = (array) => {
-    console.log("randomizer is running");
-
     return array.sort(() => 0.5 - Math.random());
 };
 
+//function to obtain streaming providers for movie
 myApp.getProviders = function (providers, listEl) {
-    //   //create a div, give it a class name
     const providerContainer = document.createElement("div");
     const providerLink = document.createElement("a");
     const errorMessage = document.createElement("p");
 
     errorMessage.className = "errorMessage";
+
     if (providers) {
         providerLink.innerText = `Where to Watch`;
         providerLink.setAttribute("href", providers.link);
@@ -111,9 +112,9 @@ myApp.getProviders = function (providers, listEl) {
 
 // Create a function to display the images from the array
 myApp.displayImages = function (array) {
+    //getting streaming providers for each movie
     array.forEach((arrayItem) => {
         const listEl = document.createElement("li");
-        const imgEl = document.createElement("img");
         const imgGrid = document.querySelector(".inventory");
         fetch(
             `https://api.themoviedb.org/3/movie/${arrayItem.id}/watch/providers?api_key=ca2c13c7d22715aaa9867db7666b846d`
@@ -126,13 +127,15 @@ myApp.displayImages = function (array) {
             });
 
         listEl.innerHTML = `
-    <div class="card">
-    <div class="moviePoster">
-    <img src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"/>
-    </div>
-    <button class="likeButton"><i class="fa-solid fa-heart-circle-plus"></i></button>
-    </div>
-    `;
+          <div class="card">
+            <div class="moviePoster">
+              <img src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"/>
+            </div>
+            <button class="likeButton">
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </button>
+          </div>
+          `;
 
         imgGrid.appendChild(listEl);
     });

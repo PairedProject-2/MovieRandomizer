@@ -16,14 +16,6 @@
 
 @media (min-width: 1250px) {
     form {
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-evenly;
-        // max-width: 1600px;
-        // margin: 50px auto 60px auto;
-        // .formSelects {
-        //     flex-basis: 403px;
-        // }
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         max-width: 1550px;
