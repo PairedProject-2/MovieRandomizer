@@ -102,7 +102,7 @@ myApp.getProviders = function (providers, listEl) {
 
     errorMessage.className = "errorMessage";
     if (providers) {
-        providerLink.innerText = `JustWatch`;
+        providerLink.innerText = `Where to Watch`;
         providerLink.setAttribute("href", providers.link);
 
         providerContainer.className = "providerContainer";

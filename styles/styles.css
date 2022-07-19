@@ -534,7 +534,7 @@ body {
 .sign-title {
   color: #fff4cd;
   flex: 0 1 20%;
-  font-family: "Fredoka One", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 25px;
   letter-spacing: 10px;
   margin: 6px auto;
@@ -576,7 +576,7 @@ body {
 
 .show-details {
   color: #303030;
-  font-family: "Montserrat", sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 48px;
@@ -795,6 +795,8 @@ form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding: 5px;
   max-width: 1000px;
 }
 form * {
@@ -802,13 +804,13 @@ form * {
 }
 form label {
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   margin: 5px;
 }
 form select {
   margin: 5px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   border-radius: 10px;
 }
@@ -894,11 +896,35 @@ form .submitButton:hover {
 }
 .inventory .errorMessage {
   margin: 0;
-  color: white;
-  padding: 0px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: rgb(220, 17, 17);
+  padding: 2px;
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inventory .providerContainer {
+  text-align: center;
+  margin: 10px 0 15px 0;
+}
+.inventory .providerContainer a {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #e2d6a9;
+  background-color: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 8px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 750px) {
   .inventory {
     display: flex;
     flex-direction: row;
