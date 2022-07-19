@@ -573,6 +573,7 @@ body {
 
 .theatre-grid {
   width: 100px;
+  rotate: -7deg;
 }
 
 .show-details {
@@ -941,6 +942,9 @@ form .submitButton:hover {
   }
   .inventory li {
     padding: 5px;
+  }
+  .theater-sign {
+    max-width: 1600px;
   }
 }
 @media (min-width: 1200px) {
