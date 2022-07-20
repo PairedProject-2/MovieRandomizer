@@ -519,7 +519,7 @@ body {
 }
 
 .sign-lines {
-  flex: 0 1 25vw;
+  flex: 0 1 50vw;
   margin-top: 10px;
   margin-bottom: 20px;
 }
