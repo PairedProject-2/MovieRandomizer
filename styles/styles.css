@@ -873,6 +873,9 @@ footer {
   border-top: 1px solid white;
   line-height: 1.8rem;
 }
+footer .textContainer {
+  text-align: center;
+}
 footer span {
   padding-bottom: 25px;
   color: black;
