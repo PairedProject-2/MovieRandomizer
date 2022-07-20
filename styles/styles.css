@@ -859,12 +859,27 @@ form .submitButton:hover {
   color: rgba(0, 0, 0, 0.4);
 }
 
+footer {
+  bottom: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  width: 100%;
+  height: 2.5rem;
+  padding: 25px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-top: 1px solid white;
+}
+
 .inventory {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
   align-items: center;
+  min-height: 300px;
 }
 .inventory li {
   padding: 10px;
