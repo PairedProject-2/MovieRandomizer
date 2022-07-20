@@ -36,6 +36,8 @@
                 &:hover {
                     cursor: pointer;
                     color: #cf5858;
+                    text-shadow: 0 0 5px #fff, 0 0 5px #cf5858, 0 0 5px #cf5858,
+                        0 0 8px #cf5858;
                 }
             }
             .voteAverage {
