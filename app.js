@@ -131,7 +131,10 @@ myApp.displayImages = function (array) {
         listEl.innerHTML = `
           <div class="card">
             <div class="moviePoster">
-              <img src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"/>
+              <img 
+              src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"
+              alt = "a poster of the movie ${arrayItem.title}"
+              />
             </div>
             <button class="likeButton">
               <i class="fa-solid fa-heart-circle-plus"></i>
