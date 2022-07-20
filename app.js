@@ -45,7 +45,7 @@ myApp.getNewArray = (year, movieRating) => {
             jsonData.results.forEach((arrayItem) => {
                 myApp.movieArray.push(arrayItem);
             });
-
+            console.log(myApp.movieArray);
             myApp.movieArrayIndecisive = myApp
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 5);
@@ -136,6 +136,7 @@ myApp.displayImages = function (array) {
             <button class="likeButton">
               <i class="fa-solid fa-heart-circle-plus"></i>
             </button>
+            <p class="voteAverage">${arrayItem.vote_average}</p>
           </div>
           `;
 

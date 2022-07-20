@@ -189,7 +189,7 @@ body {
 }
 
 form {
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -203,6 +203,7 @@ form {
         font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: 600;
         margin: 5px;
+        font-size: 1.2rem;
     }
     .formSelects {
         display: flex;

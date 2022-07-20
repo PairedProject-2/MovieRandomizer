@@ -776,7 +776,7 @@ body {
   }
 }
 form {
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -791,6 +791,7 @@ form label {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 600;
   margin: 5px;
+  font-size: 1.2rem;
 }
 form .formSelects {
   display: flex;
@@ -900,6 +901,18 @@ form .submitButton:hover {
   cursor: pointer;
   color: #cf5858;
 }
+.inventory li .card .voteAverage {
+  color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  margin: 0;
+  padding: 1px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 5px;
+}
 .inventory .errorMessage {
   padding-top: 24px 0 0 0;
   font-family: "M PLUS Rounded 1c", sans-serif;
@@ -956,12 +969,17 @@ form .submitButton:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 1550px;
-    margin: 0;
+    margin: 0 auto 50px auto;
     gap: 0px;
+  }
+  form label {
+    margin: 0;
+    height: 20px;
+    margin-bottom: 30px;
   }
 }
 @media (min-width: 1550px) {
   form {
-    margin: 0 auto;
+    margin: 0 auto 100px auto;
   }
 }/*# sourceMappingURL=styles.css.map */
