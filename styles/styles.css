@@ -907,6 +907,9 @@ footer span {
 .inventory li .card img {
   margin-bottom: 20px;
 }
+.inventory li .card img:hover {
+  transform: scale(1.1);
+}
 .inventory li .card .likeButton {
   position: absolute;
   top: 2px;
