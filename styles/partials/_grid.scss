@@ -39,6 +39,11 @@
                     text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434,
                         0 0 8px #b93434;
                 }
+                // &:focus {
+                //     color: #b93434;
+                //     text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434,
+                //         0 0 8px #b93434;
+                // }
             }
             .voteAverage {
                 color: white;
@@ -84,7 +89,8 @@
             border: 1px solid white;
             border-radius: 10px;
             padding: 20px;
-            &:hover {
+            &:hover,
+            &:focus {
                 box-shadow: 0 0px 20px #d34b4b inset;
             }
         }
