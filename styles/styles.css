@@ -535,7 +535,7 @@ body {
 .sign-title {
   color: #fff4cd;
   flex: 0 1 20%;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 25px;
   letter-spacing: 10px;
   margin: 6px auto;
@@ -552,8 +552,6 @@ body {
   border: 5px solid white;
   border-radius: 10px;
   box-shadow: 0 0 10px #fff, 0 0 20px red, 0 0 35px red, 0 0 40px red, inset 0 0 10px #fff, inset 0 0 20px red, inset 0 0 35px red, inset 0 0 40px red;
-  color: #808080;
-  padding: 12px;
   height: 75vw;
   max-height: 200px;
   animation: flicker 3s linear infinite;
@@ -578,7 +576,7 @@ body {
 
 .show-details {
   color: #303030;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 48px;
@@ -788,7 +786,7 @@ form * {
 }
 form label {
   color: white;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   margin: 5px;
   font-size: 1.2rem;
@@ -800,15 +798,16 @@ form .formSelects {
 }
 form select {
   margin: 5px;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Lusitana", serif;
   font-weight: 600;
+  font-size: 1.2rem;
   border-radius: 10px;
   cursor: pointer;
-  background-color: black;
-  color: #fff;
+  background-color: transparent;
+  color: #f6f6f6;
   padding: 0.5em;
   border: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #f6f6f6;
   margin: 0;
   border-radius: 3px;
   text-indent: 0.01px;
@@ -825,8 +824,8 @@ form input {
 }
 form .submitButton {
   background-color: transparent;
-  color: white;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #f6f6f6;
+  font-family: "Lusitana", serif;
   letter-spacing: 2px;
   padding: 20px;
   font-weight: 600;
@@ -861,16 +860,16 @@ form .submitButton:hover, form .submitButton:focus {
 
 footer {
   bottom: 5px;
-  color: white;
+  color: #f6f6f6;
   display: flex;
   justify-content: center;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Lusitana", serif;
   width: 100%;
   height: 2.5rem;
   padding: 25px;
   margin-bottom: 50px;
   margin-top: 50px;
-  border-top: 1px solid white;
+  border-top: 1px solid #f6f6f6;
   line-height: 1.8rem;
 }
 footer .textContainer {
@@ -898,7 +897,7 @@ footer span {
   width: 90vw;
   max-width: 300px;
   height: 450px;
-  box-shadow: 5px 0px 12px rgb(255, 255, 255);
+  box-shadow: 5px 0px 12px #f6f6f6;
 }
 .inventory li img:hover {
   cursor: pointer;
@@ -921,7 +920,7 @@ footer span {
   border: 0;
   border-radius: 5px;
   color: black;
-  background-color: #f8f0e3;
+  background-color: #f6f6f6;
   transition: all 0.1s;
 }
 .inventory li .card .likeButton:hover {
@@ -930,7 +929,7 @@ footer span {
   text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434, 0 0 8px #b93434;
 }
 .inventory li .card .voteAverage {
-  color: white;
+  color: #f6f6f6;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -944,8 +943,8 @@ footer span {
 }
 .inventory .errorMessage {
   padding-top: 24px 0 0 0;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  color: rgb(220, 17, 17);
+  font-family: "Lusitana", serif;
+  color: #b93434;
   padding: 2px;
   height: 32px;
   text-transform: uppercase;
@@ -963,19 +962,19 @@ footer span {
   margin: 20px 0 25px 0;
 }
 .inventory .providerContainer a {
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "Lusitana", serif;
   font-weight: 600;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: #f6f6f6;
   background-color: transparent;
   letter-spacing: 2px;
   text-transform: uppercase;
-  border: 1px solid white;
+  border: 1px solid #f6f6f6;
   border-radius: 10px;
   padding: 20px;
 }
 .inventory .providerContainer a:hover, .inventory .providerContainer a:focus {
-  box-shadow: 0 0px 20px #d34b4b inset;
+  box-shadow: 0 0px 20px #b93434 inset;
 }
 
 @media (min-width: 750px) {
