@@ -498,6 +498,10 @@ html {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+
 body {
   background: black;
 }
@@ -774,7 +778,7 @@ body {
   }
 }
 form {
-  margin: 0 auto 30px auto;
+  margin: 35px auto 30px auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
