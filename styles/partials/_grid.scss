@@ -67,9 +67,10 @@
     .errorMessage {
         padding-top: 24px 0 0 0;
         font-family: $bodyFont;
+        font-size: 1rem;
         color: $primary;
-        padding: 2px;
-        height: 32px;
+        padding-top: 18px;
+        height: 47px;
         text-transform: uppercase;
         font-weight: 600;
         display: flex;
@@ -82,7 +83,7 @@
     }
     .providerContainer {
         text-align: center;
-        margin: 20px 0 25px 0;
+        margin: 35px 0 25px 0;
         a {
             font-family: $bodyFont;
             font-weight: 600;
