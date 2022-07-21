@@ -803,7 +803,7 @@ form select {
   font-size: 1.2rem;
   border-radius: 10px;
   cursor: pointer;
-  background-color: transparent;
+  background-color: black;
   color: #f6f6f6;
   padding: 0.5em;
   border: 0;
@@ -936,6 +936,7 @@ footer span {
   margin: 0;
   padding: 1px;
   font-size: 1.2rem;
+  font-family: "Lusitana", serif;
   border: 1px solid black;
   background-color: black;
   border-radius: 5px;
