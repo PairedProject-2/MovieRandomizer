@@ -1,0 +1,51 @@
+// table style
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  * {
+    position: relative;
+  }
+
+  td,
+  th {
+    padding-left: 8px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  }
+
+  thead tr {
+    height: 60px;
+    background: #3caeae;
+    font-size: 16px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  }
+
+  tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #e3f1d5;
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.deleteItem {
+  background-color: transparent;
+  color: white;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: 2px;
+  padding: 20px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+  border-radius: 10px;
+  text-transform: uppercase;
+}

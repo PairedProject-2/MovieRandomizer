@@ -1,103 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Movie Randomizer</title>
-        <link rel="stylesheet" href="./styles/styles.css" />
-        <script
-            src="https://kit.fontawesome.com/13dd608ac9.js"
-            crossorigin="anonymous"
-        ></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <div class="main">
-            <div class="theater-sign">
-                <div class="sign-top">
-                    <div class="sign-lines">
-                        <div class="sign-line"></div>
-                        <div class="sign-line"></div>
-                    </div>
-                    <div class="sign-title">Decision Fatigue?</div>
-                    <div class="sign-lines">
-                        <div class="sign-line"></div>
-                        <div class="sign-line"></div>
-                    </div>
-                </div>
-                <div class="grid-container">
-                    <div class="theatre-grid">
-                        <div class="show-details" style="color: #f8f0e3">
-                            <p class="neon">Scroll no more!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Randomizer</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/13dd608ac9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-            <form action="">
-                <div class="formSelects">
-                    <label for="movieYear">Movie Release Date</label>
-                    <select id="movieYear" class="selectVal">
-                        <option
-                            value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
-                        >
-                            2010 - 2022
-                        </option>
-                        <option
-                            value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
-                        >
-                            2000 - 2009
-                        </option>
-                        <option
-                            value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
-                        >
-                            1990 - 1999
-                        </option>
-                    </select>
-                </div>
-
-                <div class="formSelects">
-                    <label for="movieScore">Classics or Trash?</label>
-                    <select id="movieScore" class="selectVal">
-                        <option value="desc" selected="selected">
-                            Give me a classic
-                        </option>
-                        <option value="asc">In the Mood for Trash</option>
-                    </select>
-                </div>
-
-                <div class="formSelects">
-                    <label for="movieDecisiveness"
-                        >How long have you been scrolling?</label
-                    >
-                    <select id="movieDecisiveness" class="selectVal">
-                        <option value="Decisive" selected="selected">
-                            Just started
-                        </option>
-                        <option value="Indecisive">My mind is numb</option>
-                        <option value="Hopeless">Help me!</option>
-                    </select>
-                </div>
-
-                <button onClick="getSelectedItems()" class="submitButton">
-                    Recommendations
-                </button>
-            </form>
-
-            <div class="wrapper">
-                <div class="grid" id="grid">
-                    <ul class="inventory"></ul>
-                </div>
-            </div>
-
-            <footer>Created at Juno College</footer>
+  <body>
+    <div class="main">
+      <div class="theater-sign">
+        <div class="sign-top">
+          <div class="sign-lines">
+            <div class="sign-line"></div>
+            <div class="sign-line"></div>
+          </div>
+          <div class="sign-title">Decision Fatigue?</div>
+          <div class="sign-lines">
+            <div class="sign-line"></div>
+            <div class="sign-line"></div>
+          </div>
         </div>
-        <script src="app.js"></script>
-    </body>
+        <div class="grid-container">
+          <div class="theatre-grid">
+            <div class="show-details" style="color: #f8f0e3">
+              <p class="neon">Scroll no more!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="formSelects">
+          <label for="movieYear">Movie Release Date</label>
+          <select id="movieYear" class="selectVal">
+            <option
+              value="primary_release_date.gte=2009-12-31&primary_release_date.lte=2022-07-14"
+            >
+              2010 - 2022
+            </option>
+            <option
+              value="primary_release_date.gte=1999-12-31&primary_release_date.lte=2010-01-01"
+            >
+              2000 - 2009
+            </option>
+            <option
+              value="primary_release_date.gte=1989-12-31&primary_release_date.lte=2000-12-31"
+            >
+              1990 - 1999
+            </option>
+          </select>
+        </div>
+
+        <div class="formSelects">
+          <label for="movieScore">Classics or Trash?</label>
+          <select id="movieScore" class="selectVal">
+            <option value="desc" selected="selected">Give me a classic</option>
+            <option value="asc">In the Mood for Trash</option>
+          </select>
+        </div>
+
+        <div class="formSelects">
+          <label for="movieDecisiveness"
+            >How long have you been scrolling?</label
+          >
+          <select id="movieDecisiveness" class="selectVal">
+            <option value="Decisive" selected="selected">Just started</option>
+            <option value="Indecisive">My mind is numb</option>
+            <option value="Hopeless">Help me!</option>
+          </select>
+        </div>
+
+        <button class="submitButton">Recommendations</button>
+      </form>
+
+      <div class="wrapper">
+        <div class="grid" id="grid">
+          <ul class="inventory"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Favourite's List</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Movie:
+            <div id="myDiv"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="deleteItems()" class="deleteItem">Delete movie</button>
+
+    <footer>Created at Juno College</footer>
+  </body>
 </html>

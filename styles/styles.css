@@ -868,6 +868,7 @@ form .submitButton:hover {
 .inventory li {
   padding: 10px;
   margin: 5px;
+  list-style: none;
 }
 .inventory li img {
   width: 90vw;
@@ -877,7 +878,6 @@ form .submitButton:hover {
 }
 .inventory li img:hover {
   cursor: pointer;
-  transform: rotateY(180deg);
 }
 .inventory li .card {
   position: relative;
@@ -899,6 +899,9 @@ form .submitButton:hover {
 .inventory li .card .likeButton:hover {
   cursor: pointer;
   color: #cf5858;
+}
+.inventory .likeButton.test {
+  background-color: #eb9203 !important;
 }
 .inventory .errorMessage {
   padding-top: 24px 0 0 0;
@@ -932,6 +935,12 @@ form .submitButton:hover {
   box-shadow: 0 0px 20px #d34b4b inset;
 }
 
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
 @media (min-width: 750px) {
   .inventory {
     display: flex;
@@ -960,4 +969,49 @@ form .submitButton:hover {
   form {
     margin: 0 auto;
   }
+}
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td,
+table th {
+  padding-left: 8px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+table thead tr {
+  height: 60px;
+  background: #3caeae;
+  font-size: 16px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+
+.deleteItem {
+  background-color: transparent;
+  color: white;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: 2px;
+  padding: 20px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+  border-radius: 10px;
+  text-transform: uppercase;
 }/*# sourceMappingURL=styles.css.map */
