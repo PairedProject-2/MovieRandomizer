@@ -3,7 +3,9 @@ const myApp = {};
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
 myApp.url =
     " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1250&with_watch_monetization_types=flatrate&providers";
-myApp.init = () => {};
+myApp.init = () => {
+    myApp.showList();
+};
 const submitButton = document.querySelector(".submitButton");
 
 //  3 fetches to obtain 60 movie objects for array
@@ -45,7 +47,6 @@ myApp.getNewArray = (year, movieRating) => {
             jsonData.results.forEach((arrayItem) => {
                 myApp.movieArray.push(arrayItem);
             });
-            console.log(myApp.movieArray);
             myApp.movieArrayIndecisive = myApp
                 .movieRandomizer(myApp.movieArray)
                 .splice(0, 5);
@@ -163,7 +164,7 @@ submitButton.addEventListener("click", function (event) {
 });
 
 document
-    .querySelector(".inventory")
+    .querySelector(".inventory") //querying ul list that will contain movie cards
     .addEventListener("click", function (event) {
         const linkToProvider =
             event.target.offsetParent.offsetParent.nextElementSibling.firstChild
@@ -174,20 +175,24 @@ document
         let localItems = JSON.parse(localStorage.getItem("localItem"));
 
         if (localItems === null) {
-            favouritesList = [];
+            favouritesList = []; //creation of favouritesList array and set it
         } else {
+            // equal to items in local storage
             favouritesList = localItems;
         }
 
         favouritesList.push({ movieTitle, linkToProvider });
         localStorage.setItem("localItem", JSON.stringify(favouritesList));
-        myApp.showList();
-        myApp.checkForDuplicates();
+        myApp.showList(); //function to display items on page
+
+        myApp.checkForDuplicates(); //function that loops over localStorage array and
+        //checks if movie linked to fav button.
+        //Disables button and sets class to 'liked'
     });
 
 myApp.showList = function () {
     let output = "";
-    let favouritesListShow = document.querySelector(".favouritesList");
+    let favouritesListHtml = document.querySelector(".favouritesList");
     let localItems = JSON.parse(localStorage.getItem("localItem"));
     if (localItems === null) {
         favouritesList = [];
@@ -200,24 +205,24 @@ myApp.showList = function () {
             output += `
         <li>
         <a href = "${listItem.linkToProvider}" target = "_blank">${listItem.movieTitle}</a>
-        <button class="deleteMovie" onClick="deleteMovie(${index})"> X </button>
+        <button class="deleteMovie" onClick="deleteMovie(${index})"><i class="fa-solid fa-trash-can"></i></button>
         </li>
         `;
-            favouritesListShow.innerHTML = output;
+            favouritesListHtml.innerHTML = output;
         } else {
             const searchTerm = listItem.movieTitle.split(" ");
-            const newSearchTerm = searchTerm.join("+");
-            output += `
+            const newSearchTerm = searchTerm.join("+"); //if no provider link, split movie
+            //title and inject into IMDB search endpoint
+            output += `                                 
             <li>
             <a href = "https://www.imdb.com/find?q=${newSearchTerm}" target = "_blank">${listItem.movieTitle}</a>
-            <button class="deleteMovie" onClick="deleteMovie(${index})"> X </button>
+            <button class="deleteMovie" onClick="deleteMovie(${index})"><i class="fa-solid fa-trash-can"></i></button>
             </li>
             `;
-            favouritesListShow.innerHTML = output;
+            favouritesListHtml.innerHTML = output;
         }
     });
 };
-myApp.showList();
 
 function deleteMovie(index) {
     let favouritesListShow = document.querySelector(".favouritesList");
@@ -226,8 +231,9 @@ function deleteMovie(index) {
     if (favouritesList.length === 0) {
         favouritesListShow.innerHTML = "";
     }
-    myApp.showList();
-    myApp.checkFavList();
+    myApp.showList(); //re-render favourites list
+    myApp.checkFavList(); //reverses "liked" class and disabled on button if movie is removed
+    //from favourites list
 }
 
 myApp.checkForDuplicates = function () {
@@ -240,30 +246,30 @@ myApp.checkForDuplicates = function () {
                 currentButton.offsetParent.firstElementChild.firstElementChild
                     .title === localItems[i].movieTitle
             ) {
-                console.log(
-                    currentButton.offsetParent.firstElementChild
-                        .firstElementChild.title
-                );
                 currentButton.setAttribute("disabled", "");
                 currentButton.classList.add("liked");
             }
         }
+        //loops over button array and then the localStorage array. If the name of the movie
+        //attached to the button is equal to a movie in local Storage, set the button to
+        //disabled and add 'liked' class to button
     }
 
-    myApp.checkFavList();
+    myApp.checkFavList(); //re-checks buttons to make sure that fav list and like buttons are in sync
 };
 
 myApp.checkFavList = function () {
     const buttonArray = document.querySelectorAll(".likeButton");
     let localItems = JSON.parse(localStorage.getItem("localItem"));
-    const mainList = [];
+    const mainList = []; //an array that reflects the movies stored in local storage
     localItems.forEach((item) => {
         mainList.push(item.movieTitle);
     });
 
     for (let i = 0; i < buttonArray.length; i++) {
         let currentButton = buttonArray[i];
-
+        //loops over buttons and if the movie attached to the button is not on the main list
+        //remove the liked class and disabled attribute from button
         if (
             currentButton.classList.contains("liked") &&
             !mainList.includes(

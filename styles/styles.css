@@ -1006,6 +1006,9 @@ footer span {
 .inventory .providerContainer a:hover, .inventory .providerContainer a:focus {
   box-shadow: 0 0px 20px #b93434 inset;
 }
+.inventory .providerContainer .fa-trash-can {
+  color: #f6f6f6;
+}
 
 .liked {
   color: #b93434 !important;
