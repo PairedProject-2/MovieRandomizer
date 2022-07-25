@@ -572,6 +572,7 @@ p {
   height: 50px;
   align-items: center;
   margin: 4px;
+  padding: 2px;
 }
 .favouritesList li:hover {
   border-left: 1px solid #b93434;
@@ -579,6 +580,10 @@ p {
 .favouritesList li a {
   text-decoration: none;
   color: #f6f6f6;
+  width: 75%;
+}
+.favouritesList li a:hover {
+  font-weight: 900;
 }
 
 body {

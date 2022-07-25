@@ -60,12 +60,17 @@
         height: 50px;
         align-items: center;
         margin: 4px;
+        padding: 2px;
         &:hover {
             border-left: 1px solid $primary;
         }
         a {
             text-decoration: none;
             color: $offWhite;
+            width: 75%;
+            &:hover {
+                font-weight: 900;
+            }
         }
     }
 }
