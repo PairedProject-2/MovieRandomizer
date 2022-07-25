@@ -85,9 +85,20 @@
                     </select>
                 </div>
 
-                <button onClick="getSelectedItems()" class="submitButton">
-                    Recommendations
-                </button>
+                <div class="buttonContainer">
+                    <button
+                        onClick="myApp.getSelectedItems()"
+                        class="submitButton"
+                    >
+                        Recommendations
+                    </button>
+                    <button
+                        onClick="showFavouritesList()"
+                        class="getFavouritesList"
+                    >
+                        Favourites List
+                    </button>
+                </div>
             </form>
 
             <div class="grid" id="grid">

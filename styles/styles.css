@@ -822,7 +822,7 @@ form label {
 form .formSelects {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 32px;
 }
 form select {
   margin: 5px;
@@ -850,20 +850,49 @@ form input {
   align-self: center;
   margin: 20px;
 }
+form .buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 form .submitButton {
   background-color: transparent;
   color: #f6f6f6;
   font-family: "Lusitana", serif;
   letter-spacing: 2px;
-  padding: 20px;
   font-weight: 600;
   text-align: center;
   align-self: center;
   transition: all 0.3s;
   border-radius: 10px;
   text-transform: uppercase;
+  margin: 0;
+  width: 250px;
+  height: 50px;
 }
 form .submitButton:hover, form .submitButton:focus {
+  cursor: pointer;
+  box-shadow: 0 0px 20px #d34b4b inset;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+form .getFavouritesList {
+  background-color: transparent;
+  color: #f6f6f6;
+  font-family: "Lusitana", serif;
+  letter-spacing: 2px;
+  padding: 15px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+  transition: all 0.3s;
+  border-radius: 10px;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+  margin: 0px;
+}
+form .getFavouritesList:hover, form .getFavouritesList:focus {
   cursor: pointer;
   box-shadow: 0 0px 20px #d34b4b inset;
   border: 1px solid rgb(255, 255, 255);

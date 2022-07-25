@@ -60,7 +60,7 @@ myApp.getNewArray = (year, movieRating) => {
                 .splice(0, 10);
 
             document.querySelector(".inventory").innerHTML = ""; //clear grid
-
+            console.log(myApp.movieArray);
             //display 10, 5, or 1 movie depending on user selection
             if (myApp.results.includes("Decisive")) {
                 myApp.displayImages(myApp.movieArrayDecisive);
@@ -74,7 +74,7 @@ myApp.getNewArray = (year, movieRating) => {
 };
 
 // Store the user input from dropdown menu into a new array
-function getSelectedItems() {
+myApp.getSelectedItems = function () {
     const items = document.getElementsByClassName("selectVal");
 
     myApp.results = [];
@@ -84,7 +84,7 @@ function getSelectedItems() {
         const userInput = item.options[item.selectedIndex].value;
         myApp.results.push(userInput);
     }
-}
+};
 
 // array randomizer
 myApp.movieRandomizer = (array) => {
@@ -163,6 +163,8 @@ submitButton.addEventListener("click", function (event) {
     myApp.getNewArray(yearChoice.value, scoreChoice.value);
 });
 
+myApp.inventoryElement = document.querySelector(".inventory");
+
 document
     .querySelector(".inventory") //querying ul list that will contain movie cards
     .addEventListener("click", function (event) {
@@ -173,7 +175,6 @@ document
             event.target.offsetParent.previousElementSibling.firstElementChild
                 .title;
         let localItems = JSON.parse(localStorage.getItem("localItem"));
-
         if (localItems === null) {
             favouritesList = []; //creation of favouritesList array and set it
         } else {
