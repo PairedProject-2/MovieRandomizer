@@ -134,6 +134,8 @@ myApp.displayImages = function (array) {
               <img 
               src= "https://image.tmdb.org/t/p/w500${arrayItem.poster_path}"
               alt = "a poster of the movie ${arrayItem.title}"
+              title = "${arrayItem.title}"
+              
               />
             </div>
             <button class="likeButton">
@@ -145,6 +147,7 @@ myApp.displayImages = function (array) {
 
         imgGrid.appendChild(listEl);
     });
+    myApp.checkForDuplicates();
 };
 
 // Execute this code based on user click
@@ -157,15 +160,121 @@ submitButton.addEventListener("click", function (event) {
     const scoreChoice = document.querySelector("#movieScore");
 
     myApp.getNewArray(yearChoice.value, scoreChoice.value);
-
-    //Stretch goals
-    // Like button and favourite's list using localStorage
-    // Fix CSS
-    // Cleanup code
-    // Store if and array statements into a function
-    // Use a drawer to save our favourite's list
-    // Card flip animation
-    //
 });
+
+document
+    .querySelector(".inventory")
+    .addEventListener("click", function (event) {
+        const linkToProvider =
+            event.target.offsetParent.offsetParent.nextElementSibling.firstChild
+                .href;
+        const movieTitle =
+            event.target.offsetParent.previousElementSibling.firstElementChild
+                .title;
+        let localItems = JSON.parse(localStorage.getItem("localItem"));
+
+        if (localItems === null) {
+            favouritesList = [];
+        } else {
+            favouritesList = localItems;
+        }
+
+        favouritesList.push({ movieTitle, linkToProvider });
+        localStorage.setItem("localItem", JSON.stringify(favouritesList));
+        myApp.showList();
+        myApp.checkForDuplicates();
+    });
+
+myApp.showList = function () {
+    let output = "";
+    let favouritesListShow = document.querySelector(".favouritesList");
+    let localItems = JSON.parse(localStorage.getItem("localItem"));
+    if (localItems === null) {
+        favouritesList = [];
+    } else {
+        favouritesList = localItems;
+    }
+
+    favouritesList.forEach((listItem, index) => {
+        if (listItem.linkToProvider) {
+            output += `
+        <li>
+        <a href = "${listItem.linkToProvider}" target = "_blank">${listItem.movieTitle}</a>
+        <button class="deleteMovie" onClick="deleteMovie(${index})"> X </button>
+        </li>
+        `;
+            favouritesListShow.innerHTML = output;
+        } else {
+            const searchTerm = listItem.movieTitle.split(" ");
+            const newSearchTerm = searchTerm.join("+");
+            output += `
+            <li>
+            <a href = "https://www.imdb.com/find?q=${newSearchTerm}" target = "_blank">${listItem.movieTitle}</a>
+            <button class="deleteMovie" onClick="deleteMovie(${index})"> X </button>
+            </li>
+            `;
+            favouritesListShow.innerHTML = output;
+        }
+    });
+};
+myApp.showList();
+
+function deleteMovie(index) {
+    let favouritesListShow = document.querySelector(".favouritesList");
+    favouritesList.splice(index, 1);
+    localStorage.setItem("localItem", JSON.stringify(favouritesList));
+    if (favouritesList.length === 0) {
+        favouritesListShow.innerHTML = "";
+    }
+    myApp.showList();
+    myApp.checkFavList();
+}
+
+myApp.checkForDuplicates = function () {
+    const buttonArray = document.querySelectorAll(".likeButton");
+    let localItems = JSON.parse(localStorage.getItem("localItem"));
+    for (let i = 0; i < buttonArray.length; i++) {
+        let currentButton = buttonArray[i];
+        for (let i = 0; i < localItems.length; i++) {
+            if (
+                currentButton.offsetParent.firstElementChild.firstElementChild
+                    .title === localItems[i].movieTitle
+            ) {
+                console.log(
+                    currentButton.offsetParent.firstElementChild
+                        .firstElementChild.title
+                );
+                currentButton.setAttribute("disabled", "");
+                currentButton.classList.add("liked");
+            }
+        }
+    }
+
+    myApp.checkFavList();
+};
+
+myApp.checkFavList = function () {
+    const buttonArray = document.querySelectorAll(".likeButton");
+    let localItems = JSON.parse(localStorage.getItem("localItem"));
+    const mainList = [];
+    localItems.forEach((item) => {
+        mainList.push(item.movieTitle);
+    });
+
+    for (let i = 0; i < buttonArray.length; i++) {
+        let currentButton = buttonArray[i];
+
+        if (
+            currentButton.classList.contains("liked") &&
+            !mainList.includes(
+                currentButton.offsetParent.firstElementChild.firstElementChild
+                    .title
+            )
+        ) {
+            currentButton.classList.toggle("liked");
+            currentButton.removeAttribute("disabled");
+        }
+    }
+};
 
 myApp.init();

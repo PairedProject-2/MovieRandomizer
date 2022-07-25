@@ -102,7 +102,11 @@
         }
     }
 }
-
+.liked {
+    color: $primary !important;
+    text-shadow: 0 0 5px #fff, 0 0 5px $primary, 0 0 5px $primary,
+        0 0 8px $primary;
+}
 // .inventory:hover .grid {
 //   transform: rotateY(180deg);
 //   .front {
