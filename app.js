@@ -283,5 +283,15 @@ myApp.checkFavList = function () {
         }
     }
 };
+myApp.showFavouritesList = function () {
+    const listElement = document.querySelector(".favourites");
 
+    if (!listElement.classList.contains("show")) {
+        listElement.classList.toggle("show");
+        location.href = "#favourites";
+    } else {
+        listElement.classList.toggle("show");
+        location.href = "#main";
+    }
+};
 myApp.init();

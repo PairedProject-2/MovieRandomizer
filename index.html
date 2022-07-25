@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="./styles/styles.css" />
     </head>
     <body>
-        <div class="main">
+        <div class="main" id="main">
             <div class="theater-sign">
                 <div class="sign-top">
                     <div class="sign-lines">
@@ -93,7 +93,7 @@
                         Recommendations
                     </button>
                     <button
-                        onClick="showFavouritesList()"
+                        onClick="myApp.showFavouritesList()"
                         class="getFavouritesList"
                     >
                         Favourites List
@@ -108,8 +108,14 @@
             </div>
         </div>
 
-        <section class="favourites">
+        <section class="favourites" id="favourites">
             <div class="wrapper">
+                <button
+                    onClick="myApp.showFavouritesList()"
+                    class="getFavouritesList"
+                >
+                    <h2>Close Favourites List</h2>
+                </button>
                 <ul class="favouritesList"></ul>
             </div>
         </section>

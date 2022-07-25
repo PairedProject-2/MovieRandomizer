@@ -511,17 +511,70 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 400px;
+  margin: 40px auto;
+  position: relative;
+  overflow: auto;
+  left: -2200px;
+}
+.favourites .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+.favourites .wrapper .getFavouritesList {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.favourites .wrapper .getFavouritesList:hover {
+  box-shadow: 0 0px 20px #b93434 inset;
+}
+.favourites .wrapper button h2 {
+  color: #f6f6f6;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-family: "Lusitana", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  padding: 15px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.show {
+  left: 0px;
 }
 
 .favouritesList {
   font-family: "Lusitana", serif;
   font-size: 1.2rem;
-  width: 400px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  margin: 40px auto;
+  padding: 15px;
+  overflow: auto;
+  border-bottom: 0.5px solid #f6f6f6;
 }
 .favouritesList li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  margin: 4px;
+}
+.favouritesList li:hover {
+  border-left: 1px solid #b93434;
 }
 .favouritesList li a {
   text-decoration: none;
