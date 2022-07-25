@@ -511,7 +511,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 400px;
+  height: 450px;
   margin: 40px auto;
   position: relative;
   overflow: auto;
@@ -564,6 +564,7 @@ p {
   padding: 15px;
   overflow: auto;
   border-bottom: 0.5px solid #f6f6f6;
+  height: 450px;
 }
 .favouritesList li {
   display: flex;

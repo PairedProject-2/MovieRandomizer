@@ -1,8 +1,7 @@
 const myApp = {};
 
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
-myApp.url =
-    " https://api.themoviedb.org/3/discover/movie?api_key=ca2c13c7d22715aaa9867db7666b846d&language=en-US&sort_by=vote_average.asc&include_adult=false&page=2&include_video=false&release_date.gte=2000&vote_count.gte=1250&with_watch_monetization_types=flatrate&providers";
+
 myApp.init = () => {
     myApp.showList();
 };
@@ -60,7 +59,6 @@ myApp.getNewArray = (year, movieRating) => {
                 .splice(0, 10);
 
             document.querySelector(".inventory").innerHTML = ""; //clear grid
-            console.log(myApp.movieArray);
             //display 10, 5, or 1 movie depending on user selection
             if (myApp.results.includes("Decisive")) {
                 myApp.displayImages(myApp.movieArrayDecisive);
