@@ -1,9 +1,11 @@
 const myApp = {};
 
 myApp.key = "ca2c13c7d22715aaa9867db7666b846d";
+myApp.inventoryElement = document.querySelector(".inventory");
 
 myApp.init = () => {
     myApp.showList();
+    myApp.checkFavList();
 };
 const submitButton = document.querySelector(".submitButton");
 
@@ -89,7 +91,7 @@ myApp.movieRandomizer = (array) => {
     return array.sort(() => 0.5 - Math.random());
 };
 
-//function to obtain streaming providers for movie
+//function to obtain streaming providers link for individual movie
 myApp.getProviders = function (providers, listEl) {
     const providerContainer = document.createElement("div");
     const providerLink = document.createElement("a");
@@ -161,10 +163,7 @@ submitButton.addEventListener("click", function (event) {
     myApp.getNewArray(yearChoice.value, scoreChoice.value);
 });
 
-myApp.inventoryElement = document.querySelector(".inventory");
-
-document
-    .querySelector(".inventory") //querying ul list that will contain movie cards
+myApp.inventoryElement //querying ul list that will contain movie cards
     .addEventListener("click", function (event) {
         const linkToProvider =
             event.target.offsetParent.offsetParent.nextElementSibling.firstChild
@@ -292,4 +291,5 @@ myApp.showFavouritesList = function () {
         location.href = "#main";
     }
 };
+
 myApp.init();
