@@ -8,6 +8,7 @@ myApp.init = () => {
     myApp.checkFavList();
 };
 const submitButton = document.querySelector(".submitButton");
+const favouriteButton = document.querySelectorAll(".getFavouritesList");
 
 //  3 fetches to obtain 60 movie objects for array
 myApp.getNewArray = (year, movieRating) => {
@@ -280,16 +281,21 @@ myApp.checkFavList = function () {
         }
     }
 };
-myApp.showFavouritesList = function () {
-    const listElement = document.querySelector(".favourites");
 
-    if (!listElement.classList.contains("show")) {
-        listElement.classList.toggle("show");
-        location.href = "#favourites";
-    } else {
-        listElement.classList.toggle("show");
-        location.href = "#main";
-    }
-};
+//query's all the "fav list" buttons and gives them function to show or hide list
+favouriteButton.forEach((button) => {
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+        const listElement = document.querySelectorAll(".favourites");
+
+        if (!listElement[0].classList.contains("show")) {
+            listElement[0].classList.toggle("show");
+            location.href = "#favourites";
+        } else {
+            listElement[0].classList.toggle("show");
+            location.href = "#main";
+        }
+    });
+});
 
 myApp.init();
