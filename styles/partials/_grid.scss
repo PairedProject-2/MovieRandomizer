@@ -12,7 +12,7 @@
       width: 90vw;
       max-width: 300px;
       height: 450px;
-      box-shadow: 5px 0px 12px $offWhite;
+      // box-shadow: 5px 0px 12px $offWhite;
       &:hover {
         cursor: pointer;
         transform: rotateY(180deg);
@@ -71,9 +71,9 @@
 
   img {
     margin-bottom: 20px;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    width: 90vw;
+    max-width: 300px;
+    height: 450px;
     border-radius: 5px;
     backface-visibility: hidden;
     transform: perspective(1000px) rotateY(0deg);
@@ -94,16 +94,23 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 95%;
-    background: gray;
+    width: 90vw;
+    max-width: 300px;
+    height: 450px;
+    background: #ffdb5892;
     transition: 0.5s;
     transform: perspective(1000px) rotateY(-180deg);
     backface-visibility: hidden;
     border-radius: 5px;
-    color: $offWhite;
     text-align: center;
-    line-height: 530px;
+    line-height: 35px;
+
+    p {
+      padding: 10px;
+      color: $offWhite;
+      font-size: 0.9rem;
+      font-family: $bodyFont;
+    }
   }
 
   .likeButton {

@@ -1013,80 +1013,12 @@ footer span {
   width: 90vw;
   max-width: 300px;
   height: 450px;
-  box-shadow: 5px 0px 12px #f6f6f6;
 }
 .inventory li img:hover {
   cursor: pointer;
   transform: rotateY(180deg);
 }
-.inventory li .card {
-  position: relative;
-}
-.inventory li .card img {
-  margin-bottom: 20px;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transform: perspective(1000px) rotateY(0deg);
-  transition: 0.5s;
-  box-shadow: -10px 0px 13px -7px rgba(255, 255, 255, 0.345), 10px 0px 13px -7px rgba(255, 255, 255, 0.345);
-}
-.inventory li .card:hover img {
-  transform: perspective(1000px) rotateY(180deg);
-}
-.inventory li .card:hover .content {
-  transform: perspective(1000px) rotateY(0);
-}
-.inventory li .card .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-  background: gray;
-  transition: 0.5s;
-  transform: perspective(1000px) rotateY(-180deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  border-radius: 5px;
-  color: #f6f6f6;
-  text-align: center;
-  line-height: 530px;
-}
-.inventory li .card .likeButton {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  font-size: 1.5rem;
-  border: 0;
-  border-radius: 5px;
-  color: black;
-  background-color: #f6f6f6;
-  transition: all 0.1s;
-}
-.inventory li .card .likeButton:hover {
-  cursor: pointer;
-  color: #b93434;
-  text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434, 0 0 8px #b93434;
-}
-.inventory li .card .voteAverage {
-  color: #f6f6f6;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  margin: 0;
-  padding: 1px;
-  font-size: 1.2rem;
-  font-family: "Lusitana", serif;
-  border: 1px solid black;
-  background-color: black;
-  border-radius: 5px;
-  padding-bottom: 2px;
-}
-.inventory .errorMessage {
+.inventory li .errorMessage {
   padding-top: 24px 0 0 0;
   font-family: "Lusitana", serif;
   font-size: 1rem;
@@ -1103,11 +1035,11 @@ footer span {
   margin-right: auto;
   max-width: 255px;
 }
-.inventory .providerContainer {
+.inventory li .providerContainer {
   text-align: center;
   margin: 35px 0 25px 0;
 }
-.inventory .providerContainer a {
+.inventory li .providerContainer a {
   font-family: "Lusitana", serif;
   font-weight: 600;
   text-decoration: none;
@@ -1119,16 +1051,89 @@ footer span {
   border-radius: 10px;
   padding: 20px;
 }
-.inventory .providerContainer a:hover, .inventory .providerContainer a:focus {
+.inventory li .providerContainer a:hover, .inventory li .providerContainer a:focus {
   box-shadow: 0 0px 20px #b93434 inset;
 }
-.inventory .providerContainer .fa-trash-can {
+.inventory li .providerContainer .fa-trash-can {
   color: #f6f6f6;
 }
-
-.liked {
+.inventory .liked {
   color: #b93434 !important;
   text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434, 0 0 8px #b93434;
+}
+
+.card {
+  position: relative;
+}
+.card img {
+  margin-bottom: 20px;
+  width: 90vw;
+  max-width: 300px;
+  height: 450px;
+  border-radius: 5px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: 0.5s;
+  box-shadow: -10px 0px 13px -7px rgba(255, 255, 255, 0.345), 10px 0px 13px -7px rgba(255, 255, 255, 0.345);
+}
+.card:hover img {
+  transform: perspective(1000px) rotateY(180deg);
+}
+.card:hover .content {
+  transform: perspective(1000px) rotateY(0);
+}
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  max-width: 300px;
+  height: 450px;
+  background: rgba(255, 219, 88, 0.5725490196);
+  transition: 0.5s;
+  transform: perspective(1000px) rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px;
+}
+.card .content p {
+  padding: 10px;
+  color: #f6f6f6;
+  font-size: 0.9rem;
+  font-family: "Lusitana", serif;
+}
+.card .likeButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 5px;
+  color: black;
+  background-color: #f6f6f6;
+  transition: all 0.1s;
+}
+.card .likeButton:hover {
+  cursor: pointer;
+  color: #b93434;
+  text-shadow: 0 0 5px #fff, 0 0 5px #b93434, 0 0 5px #b93434, 0 0 8px #b93434;
+}
+.card .voteAverage {
+  color: #f6f6f6;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  margin: 0;
+  padding: 1px;
+  font-size: 1.2rem;
+  font-family: "Lusitana", serif;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 5px;
+  padding-bottom: 2px;
 }
 
 @media (min-width: 750px) {

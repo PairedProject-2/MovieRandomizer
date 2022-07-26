@@ -129,8 +129,8 @@ myApp.displayImages = function (array) {
       .then((jsonData) => {
         myApp.getProviders(jsonData.results.CA, listEl);
       });
-    const movieSummary = arrayItem.overview.split(" ");
-    const newMovieSummary = movieSummary.join("+");
+    // const movieSummary = arrayItem.overview.split(",");
+    // const newMovieSummary = movieSummary.join("+");
 
     listEl.innerHTML = `
           <div class="card">
@@ -142,7 +142,7 @@ myApp.displayImages = function (array) {
               
               />
               <div class="content">
-              
+              <p>${arrayItem.overview}</p>
             </div>
             </div>
             
@@ -152,7 +152,7 @@ myApp.displayImages = function (array) {
             <p class="voteAverage">${arrayItem.vote_average}</p>
           </div>
           `;
-
+    console.log(arrayItem.overview);
     imgGrid.appendChild(listEl);
   });
   myApp.checkForDuplicates();
