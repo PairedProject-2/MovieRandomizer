@@ -1,298 +1,298 @@
 // header animation by: https://codepen.io/tiffwong/pen/ErGgxq
 
 body {
-    background: black;
+  background: black;
 }
 .main {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .theater-sign {
-    height: 300px;
-    margin: 0 auto;
-    width: 90vw;
-    max-width: 750px;
+  height: 300px;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 750px;
 }
 
 .sign-top {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .sign-lines {
-    flex: 0 1 50vw;
-    margin-top: 10px;
-    margin-bottom: 20px;
+  flex: 0 1 50vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .sign-line {
-    background: white;
-    border-radius: 3px;
-    box-shadow: 0 0 10px #fff, 0 0 20px $blue, 0 0 35px $blue, 0 0 40px $blue;
-    height: 6px;
-    margin-top: 16px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #fff, 0 0 20px $blue, 0 0 35px $blue, 0 0 40px $blue;
+  height: 6px;
+  margin-top: 16px;
 }
 .sign-title {
-    color: #fff4cd;
-    flex: 0 1 20%;
-    font-family: $headingFont;
-    margin: 6px auto;
-    padding-left: 12px;
-    text-align: center;
-    text-shadow: 0 0 10px #fff, 0 0 20px $yellow, 0 0 35px $yellow,
-        0 0 40px $yellow;
-    text-transform: uppercase;
+  color: #fff4cd;
+  flex: 0 1 20%;
+  font-family: $headingFont;
+  margin: 6px auto;
+  padding-left: 12px;
+  text-align: center;
+  text-shadow: 0 0 10px #fff, 0 0 20px $yellow, 0 0 35px $yellow,
+    0 0 40px $yellow;
+  text-transform: uppercase;
 
-    animation: flicker 3s linear infinite;
-    -moz-animation: flicker 3s linear infinite;
-    -webkit-animation: flicker 3s linear infinite;
+  animation: flicker 3s linear infinite;
+  -moz-animation: flicker 3s linear infinite;
+  -webkit-animation: flicker 3s linear infinite;
 }
 .grid-container {
-    border: 5px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #fff, 0 0 20px $red, 0 0 35px $red, 0 0 40px $red,
-        inset 0 0 10px #fff, inset 0 0 20px $red, inset 0 0 35px $red,
-        inset 0 0 40px $red;
-    height: 75vw;
-    max-height: 200px;
-    animation: flicker 3s linear infinite;
-    -moz-animation: flicker 3s linear infinite;
-    -webkit-animation: flicker 3s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #fff, 0 0 20px $red, 0 0 35px $red, 0 0 40px $red,
+    inset 0 0 10px #fff, inset 0 0 20px $red, inset 0 0 35px $red,
+    inset 0 0 40px $red;
+  height: 75vw;
+  max-height: 200px;
+  animation: flicker 3s linear infinite;
+  -moz-animation: flicker 3s linear infinite;
+  -webkit-animation: flicker 3s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .neon {
-    color: #fff;
-    margin: 0;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-        0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
-    font-size: 2rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  font-size: 2rem;
 }
 .theatre-grid {
-    width: 100px;
-    rotate: (-7deg);
+  width: 100px;
+  rotate: (-7deg);
 }
 
 .show-details {
-    color: #303030;
-    font-family: $headingFont;
-    font-weight: 600;
-    letter-spacing: 4px;
-    line-height: 48px;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
+  color: #303030;
+  font-family: $headingFont;
+  font-weight: 600;
+  letter-spacing: 4px;
+  line-height: 48px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes flicker {
-    from {
-        opacity: 1;
-    }
-    4% {
-        opacity: 0.9;
-    }
-    6% {
-        opacity: 0.85;
-    }
-    8% {
-        opacity: 0.95;
-    }
-    10% {
-        opacity: 0.9;
-    }
-    11% {
-        opacity: 0.922;
-    }
-    12% {
-        opacity: 0.9;
-    }
-    14% {
-        opacity: 0.95;
-    }
-    16% {
-        opacity: 0.98;
-    }
-    17% {
-        opacity: 0.9;
-    }
-    19% {
-        opacity: 0.93;
-    }
-    20% {
-        opacity: 0.99;
-    }
-    24% {
-        opacity: 1;
-    }
-    26% {
-        opacity: 0.94;
-    }
-    28% {
-        opacity: 0.98;
-    }
-    37% {
-        opacity: 0.93;
-    }
-    39% {
-        opacity: 0.96;
-    }
-    42% {
-        opacity: 1;
-    }
-    44% {
-        opacity: 0.97;
-    }
-    46% {
-        opacity: 0.94;
-    }
-    56% {
-        opacity: 0.9;
-    }
-    58% {
-        opacity: 0.9;
-    }
-    60% {
-        opacity: 0.99;
-    }
-    68% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 0.9;
-    }
-    72% {
-        opacity: 0.95;
-    }
-    93% {
-        opacity: 0.93;
-    }
-    95% {
-        opacity: 0.95;
-    }
-    97% {
-        opacity: 0.93;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  6% {
+    opacity: 0.85;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  11% {
+    opacity: 0.922;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  14% {
+    opacity: 0.95;
+  }
+  16% {
+    opacity: 0.98;
+  }
+  17% {
+    opacity: 0.9;
+  }
+  19% {
+    opacity: 0.93;
+  }
+  20% {
+    opacity: 0.99;
+  }
+  24% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0.94;
+  }
+  28% {
+    opacity: 0.98;
+  }
+  37% {
+    opacity: 0.93;
+  }
+  39% {
+    opacity: 0.96;
+  }
+  42% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 0.97;
+  }
+  46% {
+    opacity: 0.94;
+  }
+  56% {
+    opacity: 0.9;
+  }
+  58% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.99;
+  }
+  68% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  72% {
+    opacity: 0.95;
+  }
+  93% {
+    opacity: 0.93;
+  }
+  95% {
+    opacity: 0.95;
+  }
+  97% {
+    opacity: 0.93;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 form {
-    margin: 35px auto 30px auto;
+  margin: 35px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  max-width: 1000px;
+  * {
+    margin: 30px;
+  }
+  label {
+    color: white;
+    font-family: $headingFont;
+    font-weight: 600;
+    margin: 5px;
+    font-size: 1.2rem;
+  }
+  .formSelects {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 5px;
-    max-width: 1000px;
-    * {
-        margin: 30px;
+    gap: 32px;
+  }
+  select {
+    margin: 5px;
+    font-family: $bodyFont;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: $offWhite;
+    padding: 0.5em;
+    border: 0;
+    border-bottom: 2px solid $offWhite;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    -webkit-appearance: button; /* hide default arrow in chrome OSX */
+    option:hover {
+      color: #d2f0f0;
     }
-    label {
-        color: white;
-        font-family: $headingFont;
-        font-weight: 600;
-        margin: 5px;
-        font-size: 1.2rem;
-    }
-    .formSelects {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-    select {
-        margin: 5px;
-        font-family: $bodyFont;
-        font-weight: 600;
-        font-size: 1.2rem;
-        border-radius: 10px;
-        cursor: pointer;
-        background-color: black;
-        color: $offWhite;
-        padding: 0.5em;
-        border: 0;
-        border-bottom: 2px solid $offWhite;
-        margin: 0;
-        border-radius: 3px;
-        text-indent: 0.01px;
-        text-overflow: "";
-        -webkit-appearance: button; /* hide default arrow in chrome OSX */
-        option:hover {
-            color: #d2f0f0;
-        }
-    }
-    input {
-        width: 100px;
-        align-self: center;
-        margin: 20px;
-    }
+  }
+  input {
+    width: 100px;
+    align-self: center;
+    margin: 20px;
+  }
 
-    .buttonContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .submitButton {
+    background-color: transparent;
+    color: $offWhite;
+    font-family: $bodyFont;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+    transition: all 0.3s;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    width: 250px;
+    height: 50px;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: 0 0px 20px #d34b4b inset;
+      border: 1px solid rgba(255, 255, 255, 1);
+      color: rgba(255, 255, 255, 1);
     }
-    .submitButton {
-        background-color: transparent;
-        color: $offWhite;
-        font-family: $bodyFont;
-        letter-spacing: 2px;
-        font-weight: 600;
-        text-align: center;
-        align-self: center;
-        transition: all 0.3s;
-        border-radius: 10px;
-        text-transform: uppercase;
-        margin: 0;
-        width: 250px;
-        height: 50px;
-        &:hover,
-        &:focus {
-            cursor: pointer;
-            box-shadow: 0 0px 20px #d34b4b inset;
-            border: 1px solid rgba(255, 255, 255, 1);
-            color: rgba(255, 255, 255, 1);
-        }
+  }
+  .getFavouritesList {
+    background-color: transparent;
+    color: $offWhite;
+    font-family: $bodyFont;
+    letter-spacing: 2px;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+    transition: all 0.3s;
+    border-radius: 10px;
+    text-transform: uppercase;
+    width: 250px;
+    height: 50px;
+    margin: 0px;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      box-shadow: 0 0px 20px #d34b4b inset;
+      border: 1px solid rgba(255, 255, 255, 1);
+      color: rgba(255, 255, 255, 1);
     }
-    .getFavouritesList {
-        background-color: transparent;
-        color: $offWhite;
-        font-family: $bodyFont;
-        letter-spacing: 2px;
-        padding: 15px;
-        font-weight: 600;
-        text-align: center;
-        align-self: center;
-        transition: all 0.3s;
-        border-radius: 10px;
-        text-transform: uppercase;
-        width: 250px;
-        height: 50px;
-        margin: 0px;
-        &:hover,
-        &:focus {
-            cursor: pointer;
-            box-shadow: 0 0px 20px #d34b4b inset;
-            border: 1px solid rgba(255, 255, 255, 1);
-            color: rgba(255, 255, 255, 1);
-        }
-    }
+  }
 }
 
 .custom-dropdown select[disabled] {
-    color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .custom-dropdown select[disabled]::after {
-    color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
 }
 
 .custom-dropdown::before {
-    background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .custom-dropdown::after {
-    color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);
 }

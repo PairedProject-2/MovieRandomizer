@@ -1097,10 +1097,10 @@ footer span {
           backface-visibility: hidden;
   border-radius: 5px;
   text-align: center;
-  line-height: 35px;
+  line-height: 25px;
 }
 .card .content p {
-  padding: 10px;
+  padding: 15px;
   color: #f6f6f6;
   font-size: 0.9rem;
   font-family: "Lusitana", serif;
